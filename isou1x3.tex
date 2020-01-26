@@ -1,0 +1,428 @@
+\section{$\varepsilon$近傍，連続写像}
+
+距離空間$(X,d)$と，$X$の点$x$が与えられたとき，$X$の点$y$が‘$x$と近い点’であるとは，
+距離$d(x,y)$が‘小さい’ことが意味するものと考えられよう．ここで，
+或る正の実数$\varepsilon$をとり，$x$から距離が$\varepsilon$以下であるような$X$の点の全体
+の成す集合を考え，それを$x$の（$d$に関する）\textbf{$\varepsilon$近傍}（$\varepsilon-$neighborhood）
+と呼ぶのである．点$x$の$\varepsilon$近傍を$U_\varepsilon(x)$（または$U_\varepsilon^d(x))$と表せば，
+\[
+	U_\varepsilon(x)	=	\{	\:	y	\in	X	\:	|	\:	d(x,y)	<	\varepsilon	\:	\}
+\]
+となる．
+
+1次元Euclid空間$\R$，すなわち直線においては，$\R$の点$x$の$\varepsilon$近傍$U_\varepsilon(x)$
+は，$x$を中点とする長さ$2\varepsilon$の開区間$(x-\varepsilon,	x+\varepsilon)$に他ならない．
+また，2次元Euclid空間$\R^2$，すなわち平面においては，$\R^2$の点$x$の$\varepsilon$近傍$U_\varepsilon(x)$
+は$x$を中心とし$\varepsilon$を半径とする円の内部すなわち\textbf{開円板}（open disc）（円周上の点は
+含まない）である．さて前節で述べたように，$\R^2$の距離空間$d',d''$として，
+\begin{align*}
+	d'(x,y)	&=	((x_1-y_1)^2/4	+	(x_2	-	y_2)^2)^{1/2}	\\
+	d'(x,y)	&=	|x_1-y_1|+	|x_2	-	y_2|
+\end{align*}
+（ただし$x=(x_1,x_2),y=(y_1,y_2))$によって与えられるものをとることができる．
+（前節の記法では$d'=d_{(1/4,1)}$である．）$\R^2$の点$x$の，$d'$に関する$\varepsilon$近傍を
+$V_\varepsilon(x)$，
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=10.51cm,height=3.06cm]{fig1x3.bmp}
+\end{figure}
+$d''$に関する$\varepsilon$近傍を$W_\varepsilon(x)$と書こう．$V_\varepsilon(x)$は$x$を
+中心とする楕円の内部であり，$W_\varepsilon(x)$は$x$を中心とする正方形の内部となる（図参照）．
+
+\定理{1.1}
+$(X,d)$を距離空間，$x$を$X$の点，$\varepsilon$を正の実数とすると次の
+（ⅰ）-（ⅲ）が成り立つ．
+\begin{list}{}{}
+	\item（ⅰ）$x \in U_\varepsilon(x)$
+	\item（ⅱ）$\varepsilon	<	\varepsilon'	\Rightarrow U_\varepsilon(x) \subset U_{\varepsilon'}(x)$
+	\item（ⅲ）$y \in U_\varepsilon(x)$とすると，正の実数$\delta$で，$\delta	\leqq	\varepsilon$かつ
+$U_\delta(y) \subset U_\varepsilon(x)$となるようなものがある．
+\end{list}
+
+\証明
+（ⅰ），（ⅱ）は定義から明らかである．（ⅲ）を示すために，$d(x,y) < \varepsilon$となることに
+注意しよう．$d$を，$0 < \delta \leqq \varepsilon - d(x,y)$となるようにとれば，
+$U_\delta(y)$に含まれる任意の点$z$に対して，
+\[
+	d(x,z)	\leqq	d(x,y)	+	d(y,z)	<	d(x,y)	+	\delta	\leqq	\varepsilon
+\]
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=2.9cm,height=2.81cm]{fig1x3x2.bmp}
+	\caption{}
+	\label{fig1x3x2}
+\end{figure}
+となるから，$z	\in U_\varepsilon(x)$が成り立つ．したがって$U_\delta(y) \subset U_\varepsilon(x)$となる
+（図参照）\■
+
+\問題{1.4}
+距離空間$X$の点$x$が与えられたとき，$x$の近傍全体の共通部分は$\{x\}$となること，
+すなわち
+\[
+	\bigcap_{\varepsilon > 0} U_\varepsilon(x) = \{x\}
+\]
+が成り立つことを示せ．
+
+\証明
+$\displaystyle	\bigcap_{\varepsilon>0}(x) \supset \{x\}$は明らか．
+逆に$\displaystyle	y \in \bigcap_{\varepsilon > 0} U_\varepsilon(x)$とする．
+$y	\ne	x$とすると，$d(x,y)= \varepsilon'	\ne	0$．$\varepsilon' > \varepsilon >0$
+なる$\varepsilon$に対しては，$y	\not\in U_\varepsilon(x)$．よって
+$\displaystyle	y	\not\in	\bigcap_{\varepsilon > 0} U_\varepsilon(x)$となり矛盾．
+よって$y=x$，$\therefore y \in \{x\}$，
+$\displaystyle	\bigcap_{\varepsilon > 0 } U_\varepsilon(x)=\{x\}$
+\■
+
+\問題{1.5}
+距離空間$X$の点$x,y$および正の実数$\varepsilon,\varepsilon'$が与えられ，
+$U_\varepsilon \cap U_{\varepsilon'}(y)$が点$z$を含むとする．このとき，
+正の実数$\delta$で，$U_\delta(z)	\subset U_\varepsilon(x) \cap U_{\varepsilon'}(y)$
+となるようなものが存在することを示せ．
+
+\証明
+$\delta	=	\min	\{	\:	\varepsilon	-	d(x,y),	\varepsilon'-d(y,z)	\:	\}$とおく．
+$w	\in	U_\delta(z)$とすると，$d(x,z)	<	\delta	\leqq	\varepsilon(x,z)	\Rightarrow	d(x,w)	<	d(x,z)	+	d(z,w)	\leqq	\varepsilon$．
+よって$w	\in	U_\varepsilon(x)$．同様に$w	\in	\varepsilon(y)$．
+よって$U_\delta(z)	\subset	U_\varepsilon(x)	\cap U_{\varepsilon'}(y)$
+\vspace*{2cm}
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{9mm}
+\begin{picture}(5,1)
+	\put(-0.3,0.5){{\large $y$}}
+	\thicklines\put(0,0){\circle{6}}
+	\thinlines\path(0,0)(-3,0)
+	\qbezier[30](0,0)(-1.5,0.75)(-3,0)
+	\put(-1.5,0.5){$\varepsilon'$}
+
+	\put(2.6,-0.25){{\large $x$}}
+	\thicklines\put(2.5,0){\circle{4}}
+	\thinlines\path(2.5,0)(4.5,0)
+	\qbezier[30](2.5,0)(3.5,0.75)(4.5,0)
+	\put(3.5,0.5){$\varepsilon$}
+
+	\thicklines\put(0,0){\circle{0.05}}
+	\thicklines\put(2.5,0){\circle{0.05}}
+
+	\put(1.5,0.25){{\large $z$}}
+	\thicklines\put(1.5,0){\circle{2.0}}
+	\thicklines\put(1.5,0){\circle{0.05}}
+	\thinlines\path(1.5,0)(0.5,0)
+	\qbezier[15](1.5,0)(1,0.5)(0.5,0)
+	\put(1,0.25){$\delta$}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\■
+
+\vspace{1cm}
+
+\例{1.4}
+$X$を任意の集合とする．$x,y$を$X$の元とするとき，$x \ne y$ならば
+$d(x,y)=1$，$x=y$ならば$d(x,y)=0$とおいて，写像$d:X \times X \rightarrow \R$
+を定める．すると容易に確かめられるように，$(X,d)$は距離空間となる．
+これを，\textbf{離散距離空間}（discrete metric space）と呼び，$d$を
+$X$の\textbf{離散計量}（discrete metric）と呼ぶ．
+$x$を$X$の点とするとき，正の実数$\varepsilon$に対して，$\varepsilon \leqq 1$ならば
+$U_\varepsilon(x)=\{x\}$，$\varepsilon > 1$ならば$U_\varepsilon(x) = \{x\}$，
+$\varepsilon > 1$ならば$U_\varepsilon=X$となる．
+
+
+p143
+
+\問題{1.6}
+定理1.1の（ⅱ）の逆は必ずしも成り立たないことを示せ．――
+
+\証明
+$\varepsilon=\varepsilon'$のとき，$U_\varepsilon(x)	\subset	U_{\varepsilon'}(x)$かつ$\varepsilon	\not<	\varepsilon'$
+
+（中略）
+
+\例{1.5}
+$\R^n \: (n\in \N)$のEuclid 計量を$d$，$\R^n$の離散計量を$d'$と書き，$F$を
+$\R^n$からそれ自身への恒等写像（すなわち$\R^n$の任意の元$x$に対して$F(x)=x$）
+としよう．ここで，$F$は距離空間$(\R^n , d)$から離散距離空間$(\R^n, d')$への連続写像
+とはならないが，$(\R^n, d')$から$(\R^n, d)$への連続写像となる（読者自ら確かめられたい）．
+
+\証明
+$\forall \varepsilon > 0$に対して$\exists \delta < 1$とすれば，
+$id \left(U_\delta^{d'}(x)\right) = id(\{x\}) = \{x\} \subset U_\varepsilon^d ( id(x)) = U_\varepsilon^d (x)$．
+したがって$(\R^n,d')$から$(\R^n,d)$への連続写像となる．
+
+一方，$\exists < 1$に対しては，$\forall \delta > 0$をとっても
+$id \left(\bigcup_{\delta}^d(x) \right) \not\subset \{x\} \subset \bigcup_{\varepsilon}^{d'}(id(x))$．
+\■
+
+\問題{1.7}
+$\R^n$の元$x=(x_1,	\cdots	,	x_n)$にその第$i$成分$x_i \: (1 \leqq i \leqq n)$を対応
+させる写像$p_i$を，$\R^n$の元をその第$i$成分に写す\textbf{標準的射影}（canonical projection）と
+呼ぶ．$a_1 , \cdots , a_n$を正の実数とするとき，2次形式$Q(x) = \sum_{i=1}^{n}	a_i	x_i^2$に
+よって定められる計量を前と同様に$d_{(a_1,	\cdots	a_n)}$と書こう．
+$p_i$を，距離空間$(\R~n, d_{(a_1	,\cdots	,	a_n)})$の
+台から1次元Euclid空間すなわち直線$\R$への写像とみなすとき，$p_i$は連続写像となることを示せ．
+
+\証明
+任意の$\varepsilon > 0$に対して，$\delta$を$\delta=\sqrt{a_i \varepsilon^2}$とおくと，
+\begin{align*}
+&d_{(a_1,	\cdots	,	a_n)}(x,y) = \sqrt{\textstyle\sum_{i=1}^{n}	a_i	(x_i	-	y_i)^2}	<	\delta	=	\sqrt{a_i\varepsilon^2}	\\
+&\Rightarrow \sum_{i=1}^{n}	a_i(x_i	-	y_i)^2	<	a_i	\varepsilon^2	
+	\Rightarrow	a_i(x_i	-	y_i)^2	<	a_i	\varepsilon^2	-	\sum_{j	\ne	i}	a_j	(x_j	-	y_j)^2	\\
+&	\Rightarrow	a_i(x_i	-	y_i)^2	<	a_i	\varepsilon^2
+	\Rightarrow	(x_i	-	y_i)^2	<	\varepsilon^2	\\
+&	\Rightarrow	d(x_i	,	y_i)^2	<	\varepsilon
+\end{align*}
+よって
+$y=(y_1, \cdots, y_n)	\in	\bigcup_\delta^{d_{(a_1,	\cdots	,	a_n)}}(x)	\Longrightarrow p_i(y) = y_i	\in	U_\varepsilon^d (x_i)	=	p_i(x)$
+となり，$p_i$は連続．
+\■
+
+\問題{1.8}
+$F$を距離空間$X$からEuclid 空間$(\R^n,d_{(a_1,	a_2,	\cdots,	a_n)})$への写像とし，$p_i$を$\R^n$の元をその第$i$成分に写す標準的写像
+とする．このとき，$F$が$X$の点$a$で連続であるためには，$X$から直線$R$への写像$p_i \circ F$が$i=1, \cdots , n$について
+点$a$で連続であることが必要十分であることを示せ．
+
+\証明
+（ⅰ）$F : X \rightarrow (\R^n,d_{(a_1,	a_2,	\cdots,	a_n)})$が点$a \in X$で連続と仮定する．標準的射影$p_i$は$\R^n$の任意の点で連続だから
+とくに，$F(a)$で連続，したがって任意の$\varepsilon > 0$に対して，ある$\delta' > 0$が存在して
+\[
+	\textstyle
+	p_i	\left(	U_{\delta'}^d	F(a)
+			\right)
+	\subset
+	U_\varepsilon^{d'}	(	p_i	\circ	F(a))
+\]
+が成り立つ．仮定（ⅰ）より，$F$が点$a$で連続だから，とくにこの$\delta'$に対しても
+或る$\delta$が存在して
+\[	
+	\textstyle
+	F	\left(
+			U_{\delta}^d	(a)
+		\right)
+		\subset
+			U_{\delta'}^d	(F(a))
+\]
+よって
+\[
+	\textstyle
+	p_i	\circ	F	\left(	U_{\delta}^{d'}	(a)
+							\right)
+						\subset	p_i	\left(
+														U_{\delta'}^d	F(a)
+												\right)
+						\subset	U_\varepsilon^{d'}	(p_i	\circ	F(a))
+\]
+よって$p_i \circ F$は連続
+（$p_i$が連続であることは問題1.7で証明済みであるので，合成写像も連続である，ことを用いてもよい）．
+
+（ⅱ）$p_i \circ F \quad (i=1,2,	\cdots	,	n)$が連続と仮定する．任意の$\varepsilon > 0$について
+\[
+	\textstyle
+	F^{-1}	\left(	U_\varepsilon^{d_{(a_1,a_2,\cdots	,	a_n)}}  F(a)	\right)
+	=
+	\bigcap_{i=1}^n	(p_i	\circ F)^{-1}	\left(	U_{	\varepsilon - \Sigma_{j\ne i} a_j(x_j - y_j)^2}^{d_{a_i}}	\left(	p_i	\circ F(a)	\right)	\right)
+\]が成り立つ，このことを確認しておく．
+\begin{align*}
+&	x	\in	F^{-1}( U_\varepsilon^{d_{(a_1,a_2,\cdots	,	a_n)}} (F(a)) ) \\
+& \Leftrightarrow 	
+F(x) \in U_\varepsilon^{d_{(a_1,a_2,\cdots	,	a_n)}} (F(a))
+ \Leftrightarrow 	
+	d_{(a_1,a_2,\cdots	,	a_n)}(F(x) - F(a))	<	\varepsilon	\\
+& \Leftrightarrow 	
+	\sum_{i=1}^n	a_i(F_i(x) - F_i(a))^2 < \varepsilon	\\
+& \Leftrightarrow 	
+	a_i(F_i(x) - F_i(a))^2 < \varepsilon	-	\sum_{j \ne i}	a_j(F_j(x) - F_j(a))^2 \quad (i=1,2,	\cdots, n)	\\	
+& \Leftrightarrow 	
+	p_i	\circ F(x) \in U_{\sqrt{\varepsilon	-	\Sigma_{j \ne i} a_j(F_j(x) - F_j(a))^2}}^{d_{a_i}}	(p_i \circ F(a))	\quad (i=1,2,	\cdots, n)	\\
+& \Leftrightarrow 	
+	x	 \in p_i	\circ F^{-1} \left(
+												U_{\sqrt{\varepsilon	-	\Sigma_{j \ne i} a_j(F_j(x) - F_j(a))^2}}^{d_{a_i}}	(p_i \circ F(a))
+											\right)		\quad (i=1,2,	\cdots, n)	\\
+& \Leftrightarrow 	
+	x	 \in	\bigcap_{i=1}^n	( p_i	\circ F)^{-1} \left(
+												U_{\sqrt{\varepsilon	-	\Sigma_{j \ne i} a_j(F_j(x) - F_j(a))^2}}^{d_{a_i}}	(p_i \circ F(a))
+											\right)	\\
+\end{align*}
+ここで，$p	\circ F$は連続であるから，ある$\delta$が存在して，$a \in X$に対して
+\begin{align*}
+	U_\delta^{d_X}(a) 
+		&\subset	\bigcap_{i=1}^n
+					p_i	\circ F^{-1} \left(
+												U_{\sqrt{\varepsilon	-	\Sigma_{j \ne i} a_j(F_j(x) - F_j(a))^2}}^{d_{a_i}}	(p_i \circ F(a))
+											\right)	\\
+		&=	F^{-1}	\left(
+								U_\varepsilon^{d(a_1,	\cdots	,	a_n)}	(F(a))
+							\right)		
+\end{align*}
+よって$F$は連続である．
+\■
+
+\問題{1.9}
+$n$を自然数，$a_1,	\dots	,	a_n,	b_1,	\cdots	,	b_n$を
+$2n$個の正の次数とし，$d_1=d_{(a_1,	\cdots,	a_n)},d_2	=	d_{(b_1,	b_2,	\cdots	,	b_n)}$とするとき，
+$\R^n$の恒等写像$F$は，$(\R^n,	d_1)$から$(\R^n	,	d_2)$への連続写像であることを示せ．
+
+\証明
+問題1.8において$X = (\R^n , d_{(a_1,\cdots , a_n)})$とおくと，
+$p_i	\circ F$は連続であるから$F$は連続である．
+\■
+
+\問題{1.10}
+$(X,d)$を距離空間，$a$を$X$の点とする．$X$の任意の点$x$に，直線$\R$の点$d(x,a)$を対応させる写像
+$F:X \rightarrow \R$は連続であることを示せ．
+
+\証明
+任意の$\varepsilon>0$，任意の$y \in X$に対して，
+$\delta = \displaystyle	\frac{d(x,y)^2	\sqrt{\varepsilon^2 + 4d(x,a)d(y,a)}}{(d(x,a)+	d(y,a))^2}$とおくと，
+\begin{align*}
+d(x,y)	<	\delta	
+&\Rightarrow d(x,y) < \frac{d(x,y)^2	\sqrt{\varepsilon^2 + 4d(x,a)d(y,a)}}{(d(x,a)+	d(y,a))^2}	\\
+&\Rightarrow \frac{1}{d(x,y)}	 <	\frac{\sqrt{\varepsilon^2 + 4d(x,a)d(y,a)}}{(d(x,a)+	d(y,a))^2}	\\
+&\Rightarrow \frac{1}{d(x,a)	+	d(y,a)}	<	\frac{\sqrt{\varepsilon^2 + 4d(x,a)d(y,a)}}{(d(x,a)+	d(y,a))^2}	\\
+&\Rightarrow d(x,a)+	d(y,a)	<	\sqrt{\varepsilon^2 + 4d(x,a)d(y,a)}	\\
+&\Rightarrow d(x,a)^2	-2d(x,a)d(y,a)+	d(y,a)^2	<	\varepsilon^2	\\
+&\Rightarrow \left|	F(x)	-	F(y)	\right|	=\left|	d(x,a)	-	d(y,a)	\right|	<	\varepsilon	\\
+\end{align*}
+よって，$F$は連続．
+\■
+
+（保留）
+
+$(X,d),(Y,d')$を距離空間とし，$F$を$X$から$Y$への全単射としよう．
+$F$が連続写像であったとしても，逆写像$F^{-1}$は必ずしも連続写像とはならないことは，
+例1.5でも示された．ここで，$F$も$F^{-1}$もともに連続であれば，
+$F$を$F(X,d)$から$(Y,d')$の上への，または$X$から$Y$の上への位相写像（topological mapping）
+または同相写像（homeomorphism）と呼び，このとき距離空間$X,Y$は\textbf{同相}
+（homeomorphic）であるといい，$(X,d) \approx (Y,d')$と表す．
+
+距離空間$(X,d)$は，明らかにそれ自身と同相である（恒等写像$1_X$が，$X$からそれ自身の
+上の位相写像となる）．また，距離空間$(X_1,d_1),(X_2,d_2),(X_3,d_3)$が与えられたとき，
+定義より明らかにつぎのことが成り立つ．
+\begin{align*}
+	&(X_1,d_1)	\approx	(X_2,	d_2)	\Longrightarrow	(X_2,d_2)	\approx	(X_1,	d_1)	\\
+	&(X_1,d_1)	\approx	(X_2,	d_2)	\hat	(X_2,d_2)	\approx	(X_3,	d_3)	\Longrightarrow	(X_1,d_1)	\approx	(X_3,	d_3)
+\end{align*}
+問題1.9から明らかなように，$a_1,	\cdots	,	a_n,	b_1,	\cdots	,b_n$を正の実数とするとき
+$(\R^n,	d_{(a_1,	\cdots	,	a_n)})	\approx	(\R^n,d_{(b_1,\	dots	,	b_n)}$となる．
+特にに，$(\R^n,	d_{(a_1,	\cdots	,	a_n)})	\approx	(\R^n,d)$（$d$は$\R^n$のEuclid計量）．
+(実は，2次形式の理論から容易にわかるように，$Q$を$\R^n$の任意の正の定符号形式とすると，
+$(\R^n,d_Q)	\approx	(\R^n,d)$となる．）
+
+\問題{1.13}
+$d$を$\R^n$のEuclid計量，$d'$を，$\R^n$の元$x=(x_1,\cdots,	x_n)$，
+$y=(y_1,	\cdots	,	y_n)$に対して$d'(x,y)	=	\sum_{i=1}^{n}	|x_i	-	y_i|$によって
+与えられる$\R^n$の計量とするとき，$(\R^n , d)	\approx (\R^n,d')$となることを示せ．
+
+\証明
+$(\R^n,d')$から$(\R^n,d)$への写像として恒等写像$\text{Id}$をとる．
+任意の$\varepsilon$に対して，$\delta	=	\varepsilon$とすると，
+\begin{align*}
+&\text{Id}(y)	=	y	\in	\text{Id}	\left(	U_\delta^{d'}(x)
+																	\right)	=	U_\delta^{d'}(x)	\\
+&\Longrightarrow	d'(x,y)	<	\delta	
+	\Longrightarrow	\sum_{i=1}^{n}	|x_i	-	y_i|	<	\delta	=	\varepsilon	
+	\Longrightarrow	\left(	\sum_{i=1}^{n}	|x_i	-	y_i|	\right)^2	<	\varepsilon^2	\\
+\end{align*}
+が成り立つ．
+
+ここで$\sum_{i=1}^{n}(x_i-y_i)^2	\leqq	\left(	\sum_{i=1}^{n}	|x_i	-	y_i|
+																										\right)^2$を示しておく．
+一般に$\sum_{i=1}^{n}	a_i^2	\leqq	\left(	\sum_{i=1}^{n}	|a_i|\right)^2$を示せば良い．
+$n=1$のとき$a_1^2	\leqq	|a_1|^2$，よって成り立つ．$n=2$のとき，$a_1^2	+	a_2^2	\leqq	a_1^2	+	2|a_1||a_2|	+	a_2^2$，
+よって成り立つ．
+$n=k-1$のとき成り立つと仮定する．つまり
+\[
+	\sum_{i=1}^{k-1}	a_i^2	\leqq	\left(	\sum_{i=1}^{k-1}	|a_i|
+																\right)^2
+\]
+このとき，$\sum_{i=1}^{k-1}	a_i^2	+a_k^2\leqq	\left(	\sum_{i=1}^{k-1}
+																				\right)^2	+	a_k^2$である．
+ここで$n=2$のときを利用して
+\[\textstyle
+\leqq	\left(	\left|	\sum_{i=1}^{k-1}	|a_i|
+								\right|	+	|a_k|
+				\right)^2
+	=	\left(	\sum_{i=1}^{k-1}|a_i|	+	|a_k|
+		\right)^2	=	\left(	\sum_{i=1}^{k}	|a_i|\right)^2
+\]
+よって$n=k$のときも成り立つ．
+
+以上より，$\sum_{i=1}^{k}	(x_i-	y_i)^2	\leqq	\left(	\sum_{i=1}^k	|x_i	-	y_i|
+																							\right)^2$が示された．
+このとき$\sum_{i=1}^{k}	(x_i	-	y_i)^2	\leqq	\left(	\sum_{i=1}^{k}	|x_i	-y_i|
+																							\right)^2	\leqq	\varepsilon^2$，
+よって
+$\sqrt{\sum_{i=1}^{k}	(x_i	-	y_i)^2}	<	\varepsilon	\Rightarrow	d(x,y)	<	\varepsilon	
+\Rightarrow	\text{Id}	(y)	=y	\in	U_\varepsilon^d	(x)	=	U_\varepsilon^d	(	\text{Id}	(x))$，
+$(\R^n,d')	\to	(\R^n,d)$の連続が示された．
+
+次に任意の$\varepsilon	>0$に対して$\delta	>	0$が存在して，
+\[
+	\text{Id}	(U_\delta^d	(x))	\subset	U_\varepsilon^{d'}	(\text{Id}	(x))
+\]
+となることを示す．$\displaystyle	\delta	=	\frac{\varepsilon}{\sqrt{n}}>	0$をとればよい．
+このとき確かに
+\begin{align*}
+	d(x,y)	<	\frac{\varepsilon}{\sqrt{n}}
+	&\Rightarrow	\sqrt{\textstyle	\sum_{i=1}^{n}	(x_i	-	y_i)^2}	<	\frac{\varepsilon}{\sqrt{n}}
+	\Rightarrow	\sum_{i=1}^{n}	(x_i	-	y_i)^2	<	\frac{\varepsilon^2}{n}	\\
+	&\Rightarrow	d(x,y)^2	=	\underline{\textstyle	\left(	\sum_{i=1}^{n}|x_i	-	y_i|
+																				\right)^2	\leqq	n	\sum_{i=1}^{n}	(x_i-y_i)^2}	<	\varepsilon^2
+\end{align*}
+ここで下線部分を示すにあたり，まずシュワルツの不等式を示す．
+\begin{align*}
+(a_1^2	+a_2^2	+	\cdots	+	a_n^2)^{1/2}(b_1^2	+b_2^2	+	\cdots	+	b_n^2)^{1/2}
+\leqq
+	a_1b_1	+	a_2	b_2	+	\cdots	+	a_nb_n	\quad	\text{(シュワルツの不等式)}
+\end{align*}
+この不等式を証明するには，変数$t$に関する2次関数
+\begin{align*}
+	f(t)	(a_1t+	b_1)^2	+	(a_2	t+	b_2)^2	+	\cdots	+	(a_n	t+	b_n)^2
+	=	(a_1^2	+	a_2^2	+	\cdots	+	a_n^2)t^2	+	2(a_1b_1	+	a_2b_2	+	\cdots	+	a_nb_n)t	+	(b_1^2	+	\cdots	+	b_n^2)
+\end{align*}
+を考える．すべての実数$t$について$f(t) \geqq 0$となることから判別式$D$は，
+\[
+	\frac{D}{4}	=(a_1b_1	+	a_2b_2	+	\cdots	a_nb_n)^2	-	(a_1^2	+	\cdots	+	a_n^2)(b_1^2	+	\cdots	+	b_n^2)	\leqq	0
+\]
+よって，
+\[
+	(a_1b_1	+	a_2b_2	+	\cdots	a_nb_n)^2	\leqq	(a_1^2	+	\cdots	+	a_n^2)(b_1^2	+	\cdots	+	b_n^2)
+\]
+さて下線部分の証明は
+\begin{align*}
+	(|a_1|	+	\cdots	|a_n|)^2	
+&=	(|a_1|	\cdot	1	+	|a_2|	\cdot	1	+	\cdots	+|a_n|	\cdot	1)^2	\\
+&\leqq	(|a_1|^2	+	|a_2|^2	+	\cdots	+|a_n|^2)(1^2	+	1^2	+	\cdots	+1^2)	\\
+&=	(a_1^2	+	\cdots	+	a_n^2)	\cdot	n
+\end{align*}
+\■
+
+\pagebreak
+\問題{1.14}
+$(X,d)$を距離空間，$d'$を$X$の離散計量とする．このとき，$(X,d) \approx (X,d')$となるためには，
+$X$の任意の点$x$に対して正の実数$\varepsilon = \varepsilon_x$を適当にとって
+$U_\varepsilon(x)	=	\{x	\}$となるようにできることが必要十分であることを示せ．
+一般に，$(X,d) \approx (X,d')$となるとき$(X,d)$（または$X$）は\textbf{離散的}（discrete）
+であるという．
+
+\証明
+(1) $(X,d) \approx (X,d')$を仮定する．このときある位相写像$f:(X,d) \to (X,d')$が存在する．
+すなわち，任意の$\eta	>	0$に対して，ある$\delta >0$が存在して
+\[
+	f(U_\delta^d(x)	)	\subset	U_\eta^{d'}(f(x))
+\]
+が成り立つ．とくに$\eta	=1$とすると$\displaystyle	U_1^{d'}(f(x))	=	\{	f(x)	\}$であるが，
+この場合においても$	f(U_\delta^d(x)	)	\subset	U_1^{d'}(f(x))	=	\{f(x)\}$.
+$f$は単射だから$U_\delta^d(x)	\subset	\{x\}$．こので$\delta$が問題の$\varepsilon_x$である．
+
+(2)ある$\varepsilon >0$が存在して$U_\varepsilon^d(x)=\{x\}$とする．
+$(X,d) \approx (X,d')$を成り立たせる写像として恒等写像$\text{id}$をとる．
+$\text{id} : (X,d) \to (X,d')$が連続であることは証明済み（$\forall \varepsilon > 0$に対して
+$\delta < 1$となるものをとればよい）．
+$\text{id}^{-1} : (X,d) \to (X,d')$が連続であることを証明する．
+任意の$\eta > 0$に対して，仮定の$\varepsilon$をとると，
+\[
+	\text{id}^{-1}(U_\varepsilon^d(x)) = \text{id}^{-1}( \{ x \}) \subset U_\eta^{d'}	(\text{id}^{-1}(x))
+\]
+\■

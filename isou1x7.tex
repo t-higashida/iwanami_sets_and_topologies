@@ -1,0 +1,38 @@
+\section{距離空間のCauchy列，完備距離空間}
+
+（中略）
+
+\定理{1.4}
+距離空間$(X,d),(Y,d')$と写像$F:X \rightarrow Y$が与えられているとする．
+このとき，つぎの(ⅰ),(ⅱ)は同値である．
+\begin{list}{}{}
+	\item	(ⅰ) $F$は$(X,d)$から$(Y,d')$への連続写像である．
+	\item	(ⅱ) $(x_n)_{n\in \N}$を$(X,d)$の任意の収束列とすると，$(F(x_n))_{n\in \N}$は
+$(Y,d')$の収束列となり，$F(\lim x_n) = \lim F(x_n)$となる．
+\end{list}
+\証明
+(ⅰ) $ \Rightarrow $ (ⅱ)が成り立つことを示そう．$F$を$(X,d)$から$(Y,d')$への連続写像とし，
+$(x_n)_{n\in \N}$を$(X,d)$の収束列とする．$x=\lim x_n$，$y_n = F(x_n)$，
+$y=F(x)$とおこう．$\varepsilon$を任意の正の実数とすると，$F$の連続性により，
+適当な正の実数$\delta$をとれば，$x' \in X$について
+\[
+	d(x,x') < \delta \Longrightarrow d'(y,F(x')) < \varepsilon
+\]
+が成り立つ．ここで，$x= \lim x_n$であることを用いれば，適当な自然数$N$をとり，
+$n \geqq N$となる任意の自然数$n$について，$d(x,x_n) < \delta$が成り立つようにできる．
+したがって，$(*)$により，$n \geqq N$のとき，$d'(y,F(x_n))= d'(y,y_n) < \varepsilon$
+が成り立つ．これは，$(y_n)_{n\in \N}$が$y$を極限点とする収束列であるとう
+ことに他ならない．こうして(ⅰ) $ \Rightarrow $ (ⅱ)が成り立つことが示された．
+
+(ⅱ) $ \Rightarrow $ (ⅰ)が成り立つことを示すために，その対偶が成り立つことを証明しよう．
+そのため，$X$の点$x$において$F$は連続ではないと仮定し，$y=F(x)$とする．
+すると適当な正の実数$\varepsilon$をとれば，どのような正の実数$\delta$に対しても
+$F(\bigcup_\delta^d (x)) \not\subset U_\varepsilon^{d'}(y)$となる
+（ただし$U_\delta^d(x)$は$x$の$\delta$近傍，$U_\varepsilon^{d'}(y)$は$y$の$\varepsilon$
+近傍である）．特に$\delta$として$2^{-1},2^{-2},2^{-3}, \cdots$をとれば，
+各自然数$n$について，$U_{2^{-n}}^d(x)$の元$x_n$で$F(x_n) = y_n \in U_\varepsilon^{`d'}(y)$
+となるようなものがとれる（選出公理を用いた！）．$(x_n)_{n\in \N}$は
+$(X,d)$の収束列で$\lim x_n = x$となるが，明らかに$\lim y_n = y$は成り立たない
+（$f(x_n) = y_n \not\in U_\varepsilon^{d'}(y)$）．
+こうして$\neg$（ⅰ) $\Rightarrow$ $\neg$ (ⅱ) が成り立つことが示された．
+\■

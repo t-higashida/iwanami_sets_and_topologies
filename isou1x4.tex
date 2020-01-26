@@ -1,0 +1,597 @@
+\section{直積距離空間，部分距離空間}
+
+前節で見たように，距離空間$(X,d)$と，$X$からEuclid空間$\R^n$への写像
+$F$と与えられたとき，$F$が連続写像となるためには，
+$p_i	\circ F$（$p_i$は$\R^n$の元をその第$i$成分を写す標準的射影）が
+$i=1,	\cdots	,	n$についてすべて連続であることが必要十分である
+（問題1.8）．同様の命題は，$\R^n$の計量として$d_{(a_1,	\cdots	,a_n)}$
+（$a_1,	\cdots	,	a_n$は正の実数）をとっても成り立ち，そのことを用いて
+Euclid空間$(\R^n,d)$と$(\R^n,d_{(a_1,	\cdots	,a_n)})$とが同位相となることが
+導かれる（問題1.9）．実は一般につぎのことが成り立つ．
+
+\定理{1.2}
+$X$を集合，$(X_1,	d_1),	\cdots	,	(X_n,d_n) \: (n \in \N)$を距離空間とし，
+写像$f_i : X \to X_i \: (i=1,\cdots,	n)$が与えられているとする．
+さらに$X$から直積$\prod_{i=1}^n X_i$への写像を，$F(x) = (f_1(x),	\dots	,	f_n(x)) \: (x \in X)$
+によって定めると$F$は単射となるとする．このとき$X$の計量$d$を適当に与えれば，
+\underline{任意の距離空間$(Y,d')$と}写像$G: Y \to X$に対して，命題
+\[
+	\text{(C)} \quad \text{$G$は連続である} \Leftrightarrow 
+									\text{$f_i \circ G$は連続である．}	\: (i=1,	\cdots,	n)
+\]
+が成り立つ．さらに，$X$の計量$\overline{d}$についても命題(C)が成り立てば，
+$(X,d) \approx (X,\overline{d})$となる．
+
+\証明
+まず$X$の計量$d,\overline{d}$が存在して，それらについて$(C)$が成り立てば
+$(X,d)	\approx	(X,\overline{d})$となることを証明しょう．まず
+$Y=X$とし，$G$として$X$の恒等写像$1_X$をとれば，
+$1_X$は$(X,d)$から$(X,d)$自身への連続写像であるから，(C)によって
+$f_i$はすべて$(X,d)$から$(X\i,d_i)$への連続写像となる．
+さて，$1_X$は$(X,d)$から$(X,\overline{d})$への写像とみなすことができるが，
+ここで$f_i	=	f_i	\circ	1_X$がすべて連続なのだから計量$\overline{d}$が
+命題(C)を成り立たせることを用いると，$1_X$は$(X,d)$から$(X,\overline{d})$
+の上への連続写像となることがわかる．$d$と$\overline{d}$を取り替えて同じ議論を
+用いると，$1_X = 1_X^{-1}$が$(X,\overline{d}$から$(X,d)$の上への連続写像となることがいえ，
+したがって$(X,d)	\approx	(X,\overline{d})$が成り立つ．
+
+つぎに，命題(C)をを成り立たせるような$X$の計量としては，
+\[
+	d(x,y)	=	\left(	\sum_{i=1}^{n}	d_i	(f_i(x),	f_i(y))^2
+						\right)^{1/2}
+	\quad	(x,y	\in	X)
+\]
+をとることができる．$d$が$X$の計量（距離）となることは以下のようにして確かめられる．
+
+まず，Cauchy-Schwarzの不等式から始める．
+\begin{align}
+&	\left(	\sum_{i=1}^{n}	a_i^2
+	\right)
+	\left(	\sum_{i=1}^{n}	b_i^2
+	\right)
+	\geqq
+	\left(	\sum_{i=1}^{n}	a_ib_i
+	\right)^2	\quad	\text{(Cauchy-schwarz)}	\notag	\\
+&\Rightarrow
+	\left(	\sum_{i=1}^{n}	a_i^2
+	\right)^{1/2}
+	\left(	\sum_{i=1}^{n}	b_i^2
+	\right)^{1/2}
+	\geqq
+		\sum_{i=1}^{n}	a_ib_i	\label{eq1x4}	\\
+&\Rightarrow
+	2\left(	\sum_{i=1}^{n}	a_i^2
+	\right)^{1/2}
+	\left(	\sum_{i=1}^{n}	b_i^2
+	\right)^{1/2}
+	\geqq
+		\sum_{i=1}^{n}	2a_ib_i	\notag	\\
+&\Rightarrow
+	\sum_{i=1}^{n}	a_i^2	+	
+	2\left(	\sum_{i=1}^{n}	a_i^2
+	\right)^{1/2}
+	+	\left(	\sum_{i=1}^{n}	b_i^2
+		\right)^{1/2}
+	+\sum_{i=1}^{n}b_i^2
+	\geqq
+		\sum_{i=1}^{n}	a_i^2	+
+		\sum_{i=1}^{n}	2a_ib_i	+	
+		\sum_{i=1}^{n}b_i^2	\notag	\\
+&\Rightarrow
+	\left(
+		\sum_{i=1}^{n}	a_i^2
+	\right)^{1/2}	+
+	\left(	\sum_{i=1}^{n}	b_i^2
+		\right)^{1/2}
+	\geqq
+	\left(
+		\sum_{i=1}^{n}	(a_i	+	b_i)^2
+	\right)^{1/2}	\label{eq1x5}
+\end{align}
+――.
+ここで
+$a_i	=	d_i(f_i(x),f_i(z)),	b_i=d_i(f_i(z),f_i(y))$とおくと，
+\begin{align*}
+\left(\sum_{i=1}^{n}	d_i(f_i(x),f_i(z))^2	\right)^{1/2}	+	\left(\sum_{i=1}^{n}	d_i(f_i(z),f_i(y))^2	\right)^{1/2}
+&\geqq
+\left(
+	\sum_{i=1}^{n}	(d_i(f_i(x),f_i(z))
+	+	d_i(f_i(z),f_i(y))^2
+\right)^{1/2}	\\
+&\geqq
+\left(
+	\sum_{i=1}^{n}	(d_i(f_i(x),f_i(y)))^2
+\right)^{1/2}	\\
+&=	d(x,y)
+\end{align*}
+したがって$d$は三角不等式を満たす．
+$d(x,y)=0$とすると各$i$について$d_i(f_i(x),f_i(y))=0 \Rightarrow f_i(x)=f_i(y)$であるが，
+$F$は単射であるから，$x=y$となる．以上より$d$は計量となる．
+
+この$d$が命題(C)を成り立たせることを証明する．
+$(\Rightarrow)$ $G:(Y,d_Y)	\to	(X,d)$が連続であると仮定する．
+このとき任意の$\varepsilon$に対して$\delta'=\varepsilon$としてとれば
+\begin{align*}
+	d(x,y)<\varepsilon=	\delta'
+&\Rightarrow	\sum_{i=1}^{n}	d_i(f_i(x),	f_i(y))^2	<	\varepsilon^2	\\
+&\Rightarrow	d_i(f_i(x),f_i(y))^2	<	\varepsilon^2	-	\sum_{j\ne	i}^{n}	d_j(f_j(x),f_j(y))^2
+																		<	\varepsilon^2	\\
+&\Rightarrow	d_i(f_i(x),f_i(y))<	\varepsilon
+\end{align*}
+$G$が連続だから，この$\delta'$に対してもある$\delta > 0$が存在して，
+\[
+	d'(x,y)	<\delta	\Rightarrow d(G(x),G(y))	<\delta'	
+									\Rightarrow d(f_i\circ	G(x),	f_i	\circ	G(y))	<	\varepsilon
+\]
+よって$f	\circ\ G$は連続．
+
+$(\Leftarrow)$ $f_i	\circ	G$は連続と仮定する．任意の$\varepsilon	>0$に対して
+\begin{align*}
+	G^{-1}	(	U_\varepsilon^d(G(x)))	
+&	=	\bigcap_{i=1}^n	(f_i	\circ	G)^{-1}
+	\left(	u_{\varepsilon_i}^{d_i}	(f_i	\circ	G(x))
+	\right)	\\
+&	\text{ただし}	\quad	\varepsilon_i^2	=	\varepsilon^2	-	\sum_{i	\ne	j}	d_j(f_j	\circ	G(x)	,f_j	\circ	G(y))^2
+\end{align*}
+ここで$f_i	\circ	G$はれんぞくだから，ある$\delta	>0$が存在して
+\[
+	U_\delta^{d'}(x)	\subset	\bigcap_{i=1}^n	(f_i	\circ	G)^{-1}	\left(	U_{\varepsilon_i}^{d_i}	(f_i	\circ	G(x))
+																															\right)
+	=	G^{-1}	\left(	U_\varepsilon^d	(G(x)	\right)
+\]
+よって$G$は連続．
+\■
+
+上の証明の中で導入された$X$の計量$	d	\left(	d(x,y)	=	\left(	\sum_{i=1}^{n}	d_i(f_i(x),f_i(y))^2	\right)^{1/2}	\right)$を，
+$\{(X_1,	d_1),	\cdots	,	(X_n,	d_n)	\}$から$\{	f_1,	\cdots	,	f_n	\}$によって
+\textbf{誘導される計量}（induce	metric）とよび，$(X,d)$を同様に，$\{	(X_i,d_i)\}$から
+$\{f_i\}$によって\textbf{誘導される}距離空間と呼ぶ．
+
+特に，$(X_1,	d_1),	\cdots	,	(X_n,	d_n)$を距離空間，$X	=	\prod_{i=1}^n	X_i)$（直積），
+$p_i$を$X$の元$(x_i,	\cdots	,	x_n)$を$X_i$の元$x_i$への写す標準的射影としよう
+$(i=1,	\cdots	,	n)$．このとき，$\{(X_1,	d_1),	\cdots	,	(X_n,	d_n)\}$から
+$\{p_1	,	\cdots	,	p_n	\}$によって誘導される距離空間$(X,d)$を$X_1,	d_1),	\cdots	,	(X_n,d_n)$の
+\textbf{直積距離空間}（direct product metric space）と呼び，$d$を
+$d_1	,	\cdots	,	d_n$の\textbf{直積計量}（direct product metric）と呼ぶ．このとき
+$(X,d)$を$\prod_{i=1}^n	(X_i	,d_i)$または$(X_1	,	d_1)	\times	\cdots	\times	(X_n,	d_n)$と
+書くことにする．$n$次Euclid 空間$\R^n$は，直線$\R$の$n$個の直積距離空間に他ならない．
+
+一方，$(X,d)$を距離空間，$Y$を$X$の部分集合，$\iota$を$Y$から$X$への包含写像
+（すなわち$y	\in Y$に対して$\iota(y) = y \in X$）とすると$\iota$は単射だから定理1.2が
+適応され，$(X,d)$から$\iota$によって誘導される$Y$の計量としては，$d$を$Y \times Y$に制限
+したものがとれる．この計量をまた$d$と書こう．すなわち，$Y$の元$y_1,	y_2$に対して
+$d(y_1,y_2)$は$y_1,	y_2$を$X$の元とみなしたときの$y_1,y_2$の距離に他ならない．
+このとき，$(Y,d)$を$(X,d)$の\textbf{部分距離空間}（metirc subspace）と呼ぶ．
+（$X=\varnothing,d=\varnothing$とすると，$(X,d)$は（無内容的にだが）距離空間の公理を
+満たし，したがって距離空間となる．上の場合，$(X,d)$を一般の距離空間，$Y	=	\varnothing$とすると，
+$d$を$Y \times Y$に制限した写像は$\varnothing$となる．）
+
+\例{1.7}
+$n$次元Euclid 空間$\R^n$の部分集合として
+\[
+	\Z^n	=	\{	(x_1,	\cdots,	x_n)	\in \R^n	\| x_i \in \Z \: (i=1,	\cdots	,n)
+					\}
+\]
+を考える．$\Z^n$を$\R^n$の‘格子点集合’と呼ぶ．$\Z^n$は，
+$\R^n$の部分距離空間として離散的となる．$U_\varepsilon (x) = \{ x \}$を満たす$\varepsilon$として
+$0	<\varepsilon  < 1 $なるものをとればいい．
+
+\問題{1.15}
+$(X,d)$を距離空間，$X$を有限集合とすると，$(X,d)$は離散的であることを示せ．――
+
+\証明
+$X$が有限集合だから，任意の$x \in X$に対して$a_1=d(x,x_1),	\cdots	,	a_n=d(x,x_n)$
+とできる．これらの$a_i$の中から最小のもの$a_k$を選び，
+$0 < \varepsilon < a_k$なる$\varepsilon$を選ぶと，$U_\varepsilon (x) = \{ x \}$とできる．
+\■
+
+$n$次元Euclid 空間$(\R^n , d)$の点$a$の正の実数$\varepsilon$が与えられたとき，
+$a$の$\varepsilon$近傍$U_\varepsilon (a)$を$a$の中心とする半径$\varepsilon$の
+\textbf{$n$次元開球}（n-dimensional open ball）と呼ぶ．
+$( U_\varepsilon (a) ,d)$は$( \R^n,d)$の部分距離空間となる．
+
+任意の$n$次元開球$U_\varepsilon (a) , U_{\varepsilon'} (a')$は互いに同位相である．
+実際，写像$F:U_\varepsilon(a) \to U_{\varepsilon'}(a')$を，
+$U_\varepsilon (a)$の元$x$に対し$F(x)=(\varepsilon' / \varepsilon)(x-a)+a'$によって定めれば，
+$F$が$U_\varepsilon (a)$から$U{\varepsilon'} (a')$の上への位相写像となることが以下のように示される．
+まず，
+\[
+	F(x) = F(y) \Rightarrow	\frac{\varepsilon'}{\varepsilon}(x-a)	+	a'	=	\frac{\varepsilon'}{\varepsilon}(y-a)	+	a'
+							\Rightarrow	x=y
+\]
+となり，$F$は単射である．
+次に任意の$\displaystyle	F(x)	=	\frac{\varepsilon'}{\varepsilon}	(x-a)	+	a'
+\in U_{\varepsilon'}(a')$に対して，
+\begin{align*}
+	d(a',	F(x))	<	\varepsilon'
+&\Rightarrow	\left(	\sum_{i=1}^{n}	
+											\left(	\frac{\varepsilon'}{\varepsilon}(x_i	-	a_i)	+	a_i'	-a_i')^2
+											\right)^2
+							\right)^{1/2}	<	\varepsilon'	\\
+&\Rightarrow	\sum_{i=1}^{n}	\left(	\frac{\varepsilon'}{\varepsilon}	(x_i	-a_i)
+															\right)^2	<	{\varepsilon'}^2
+	\Rightarrow	\sum_{i=1}^{n}	\frac{(x_i	-	a_i)^2}{\varepsilon^2}	<	1	\\
+&\Rightarrow	\sum_{i=1}^{n}	(x_i-a_i)^2	<	\varepsilon^2
+	\Rightarrow	d(x,a)	<	\varepsilon	
+	\Rightarrow	x	\in U_\varepsilon	(a)
+\end{align*}
+よって$\displaystyle	x	=	\frac{\varepsilon}{\varepsilon'}	(F(x)	-	a')	+	a$を対応させることができるので，
+$F$は全射である．
+
+次に$F(x)$が連続写像であることを示す．
+\begin{align*}
+	y	\in	U_\delta^d (x) 
+		&\Rightarrow	d(x,y)	<	\delta	\Rightarrow	\sum_{i=1}^{n}	(x_i-y_i)^2	<	\delta^2	\\
+		&\Rightarrow	\sum_{i=1}^{n}	\frac{{\varepsilon'}^2}{\varepsilon^2}(x_i	-	y_i)-2	<		\frac{{\varepsilon'}^2}{\varepsilon^2}\delta^2	<\eta^2
+\end{align*}
+だから，任意の$\eta > 0$に対して，$\displaystyle	\delta	<	\frac{\varepsilon}{\varepsilon'}\eta$と置けばよい．
+逆写像$\displaystyle x=\frac{\varepsilon}{\varepsilon'} (F(x) - a') + a$の場合も同様――．
+
+また，写像$G: U_\varepsilon(a) \to \R^n$を，$U_\varepsilon (a) $の点$x$に対して
+$G(x)	=	\tan	(\pi	d(x,a)/2\varepsilon)(x-a)	+	a$によって定めれば，
+$G$は$U_\varepsilon(a)$から$\R^n$の上への位相写像となる，このことを以下で示す．
+\[
+	d(x,y)	<	\delta	
+\Rightarrow	\sum_{i=1}^{n}	(x_i	-	y_i)^2	<	\delta^2
+\Rightarrow	\sum_{i=1}^{n}	(x_i	-	a_i	-(y_i	-	a_i))^2	<	\delta^2
+\Rightarrow	\text{(※)}
+\]
+ここで$d(x,a)	\gtreqqless	d(y,a)$に場合わけして確認する．
+
+（ⅰ）$d(x,a)	<	d(y,a)$の場合．
+\begin{align*}
+&	\left(	\tan	\left(
+									\frac{\pi	d(x,a)}{2	\varepsilon}
+								\right)(x_i	-	a_i)
+					-
+					\tan	\left(
+									\frac{\pi	d(y,a)}{2	\varepsilon}
+								\right)(y_i	-	a_i)
+	\right)^2	\\
+&<	\left(	\tan	\left(
+									\frac{\pi	d(x,a)}{2	\varepsilon}
+								\right)(x_i	-	a_i)
+					-
+					\tan	\left(
+									\frac{\pi	d(x,a)}{2	\varepsilon}
+								\right)(y_i	-	a_i)
+	\right)^2
+<	\tan	\left(
+					\frac{\pi	d(x,a)}{2	\varepsilon}
+				\right)^2		\delta^2
+\end{align*}
+
+（ⅱ）$d(x,a)	\geqq	d(y,a)$の場合．
+\begin{align*}
+&	\left(	\tan	\left(
+									\frac{\pi	d(x,a)}{2	\varepsilon}
+								\right)(x_i	-	a_i)
+					-
+					\tan	\left(
+									\frac{\pi	d(y,a)}{2	\varepsilon}
+								\right)(y_i	-	a_i)
+	\right)^2	\\
+&=\left(	\tan	\left(
+									\frac{\pi	d(y,a)}{2	\varepsilon}
+								\right)(y_i	-	a_i)
+					-
+					\tan	\left(
+									\frac{\pi	d(x,a)}{2	\varepsilon}
+								\right)(x_i	-	a_i)
+	\right)^2	\\
+&<	\left(	\tan	\left(
+									\frac{\pi	d(y,a)}{2	\varepsilon}
+								\right)(y_i	-	a_i)
+					-
+					\tan	\left(
+									\frac{\pi	d(y,a)}{2	\varepsilon}
+								\right)(x_i	-	a_i)
+	\right)^2
+<	\tan	\left(
+					\frac{\pi	d(y,a)}{2	\varepsilon}
+				\right)^2 	\delta^2
+\end{align*}
+（ⅰ）（ⅱ）より$\min (d(x,a)	,d(y,a))	=	\min$とおくと
+\begin{align*}
+	\text{(※)}	&\Rightarrow	
+\sum_{i=1}^{n}	\left(
+									\tan \left(
+													\frac{\pi d(x,a)}{2\varepsilon}(x_i	-	a_i)
+												\right)
+							-
+									\tan \left(
+													\frac{\pi d(y,a)}{2\varepsilon}(y_i	-	a_i)
+												\right)
+								\right)^2
+<	{\min}^2	\delta^2
+\end{align*}
+よって$\displaystyle	\delta^2	<	\frac{\varepsilon^2}{{\min}^2}$となるように
+$\delta > 0$をとればよい，このとき$G$は連続になる．
+
+逆写像については，$\displaystyle	G^{-1}(x)	=\frac{1}{\tan (\pi d(x,a)/2 \varepsilon)}(x-a)	+	a$
+だから
+\[
+	d(x,y)	<	\delta	\Rightarrow	\sum_{i=1}^{n}	\left(	(x_i	-	a_i)	-	(y_i	-	a_i)
+																								\right)^2	<	\delta^2.
+\]
+$d(x,a)	\gtreqqless	d(y,a)$で場合分けして確認する．
+
+（ⅰ）$d(x,a)	<	d(y,a)$の場合．
+\begin{align*}
+&	\frac{1}{\tan	(	\pi	d(x,a)	/	2	\varepsilon )}	>	\frac{1}{\tan ( \pi d(y,a) /2 \varepsilon)}	\\
+&\Rightarrow	\sum_{i=1}^{n}	\left(
+																\frac{(x_i	-	a_i)}{\tan (\pi d(x,a)/2\varepsilon)}
+																-
+																\frac{(y_i	-	a_i)}{\tan (\pi d(y,a)/2\varepsilon)}
+															\right)^2
+															<
+															\frac{\delta^2}{\tan^2	(\pi d(x,a)/2 \varepsilon)}
+\end{align*}
+
+（ⅱ）$d(x,a)	\geqq	d(y,a)$の場合．
+\begin{align*}
+&	\frac{1}{\tan	(	\pi	d(x,a)	/	2	\varepsilon )}	\leqq	\frac{1}{\tan ( \pi d(y,a) /2 \varepsilon)}	\\
+&\Rightarrow	\sum_{i=1}^{n}	\left(
+																\frac{(x_i	-	a_i)}{\tan (\pi d(x,a)/2\varepsilon)}
+																-
+																\frac{(y_i	-	a_i)}{\tan (\pi d(y,a)/2\varepsilon)}
+															\right)^2
+															\leqq
+															\frac{\delta^2}{\tan^2	(\pi d(y,a)/2 \varepsilon)}
+\end{align*}
+（ⅰ）（ⅱ）に基づき，任意の$\varepsilon > 0$に対して$\displaystyle	\delta^2	<	\varepsilon^2	\tan	\left(	\frac{\pi \min}{2 \varepsilon}	\right)$
+をとればよい ―― したがって，$U_\varepsilon (a) \approx \R^n$．
+
+一般に距離空間$(X,d)$とその台$X$の部分集合$S$が与えられたとき，
+$\delta(S) = \{\: a \in \R \: | \: \exists x \: \exists y (x,y \in S \wedge a = d(x,y)) \: \}$
+と置こう．
+たとえば$S = \{x \} \: (x \in X)$なら$\delta(S) = \{0\}$，また$S = \{ x,y \}$なら
+$\delta(S) = \{ 0 , d(x,y) \}$である．$\R$の部分集合$\delta(S)$が上界を持つとき$S$を$X$の
+\textbf{有界部分集合}（bounded subset）と呼び，そのとき$\sup ( \delta (S))$を
+$S$の\textbf{直径}（diameter）と呼んで$\text{diam } S$とも書く．
+特に$X = \R^n, S = U_\varepsilon (a) \: (a \in X)$ならば$\diam S = 2 \varepsilon$．
+また上に見たように$\R^n$は有界距離空間と同位相である．
+
+一般に，$(X,d)$を距離空間，$w	\in	 X$とするとき，写像$d' : X \times X \to \R$を
+$d'(x,y) = \left| \Tan^{-1} d(w,x) - \Tan^{-1} d(w,y) \right|$によって定めると$d'$は
+$X$の計量（距離関数）となる，このことを以下で示そう．
+\begin{list}{}{}
+	\item（ⅰ）$d'(x,x) = \left| \Tan^{-1} d(x,w) - \Tan^{-1} d(x,w) \right| = 0$．
+	\item（ⅱ）$d(x,y) = \left| \Tan^{-1} d(x,w) - \Tan^{-1} d(y,w) \right| = \left| \Tan^{-1} d(y,w) - \Tan^{-1} d(x,w) \right|
+= d(y,x)$．
+	\item（ⅲ）\begin{align*}
+								d'(x,y) + d(y,z)	&=	\left|	\Tan^{-1} d(w,x) - \Tan^{-1} d(w,y)
+											\right|
+											+
+											\left|	\Tan^{-1} d(w,y) - \Tan^{-1} d(w,z)
+											\right|	\\
+										&>	\left|
+												\Tan^{-1}	d(w,x)	-	\Tan^{-1}	d(w,z)
+											\right|	\\
+										&=	d'(x,z)
+							\end{align*}
+\end{list}
+――．
+
+そして$(X,d')$は有界距離空間となる，というのは，任意の$d'(x,y)$は
+\begin{align*}
+	d'(x,y)	&=	
+	\left|	\Tan^{-1}	d(w,x)	-	\Tan^{-1}	d(w,y)
+	\right|	\\
+	&<
+		\left|	\frac{1}{2}\pi + \frac{1}{2}\pi
+		\right|	=	\pi
+\end{align*}
+よって，有界である――．
+
+また，$1_X$は$(X,d)$から$(X,d')$の上への位相写像となる，
+このことを以下に示す．
+任意の$\varepsilon > 0$に対して，$d(x,w)	>	d(y,w)$のとき
+\begin{align*}
+	d(x,y)	<	\delta	
+&\Rightarrow	d(x,w)	<	d(x,y)	+	d(y,w)	<	\delta	+	d(y,w)	\\
+&\Rightarrow	\Tan^{-1}	d(x,w)	<	\Tan^{-1}(\delta	+ d(y,w)) \\
+&\Rightarrow	0 < \underline{\Tan^{-1} d(x,w) - \Tan^{-1} d(y,w)} < \Tan^{-1} (\delta + d(y,w)) - \Tan^{-1} d(y,w)	
+								<	\Tan^{-1}	(\delta + d(y,w))	\underline{	<	\varepsilon}	\\
+&\Rightarrow	\delta < \tan \varepsilon -d (y,w)
+\end{align*}
+を目指すから，$\tan \varepsilon \gtreqqless d(y,w)$の場合分けして，
+\begin{list}{}{}
+	\item	（ⅰ）$\tan \varepsilon > d(y,w)$のとき，$\delta < \tan \varepsilon - d(y,w)$．
+	\item	（ⅱ）$\tan \varepsilon \leqq d(y,w)$のとき，さらに$d$が有界のとき，上限$\diam X -d (y,w) > \delta$
+なる$\delta$をとり，$d$が非有界なとき$d(y,w)		<	\varepsilon'$をとって$\varepsilon' - d(y,w) > \delta$をとればよい．
+\end{list}
+よって$1_X : (X,d) \to (X,d')$は連続．次に逆写像$1_X : (X,d') \to (X,d)$は，
+$U_\delta^{d'}	(x,y)	\subset	U_\varepsilon^d	(x,y)
+$，すなわち任意の$\varepsilon > 0$に対して，ある$\delta > 0$が存在して
+\[
+	\left|	\Tan^{-1}	d(w,x	)	-	\Tan^{-1}	d(w,y)
+	\right|
+	<	\delta
+	\Rightarrow
+	d(x,y)	<	\varepsilon
+\]
+を満たすことを示せばよい．
+
+（保留）
+
+\例{1.8} $n$次元 Euclid空間$(\R^n,d) \: (n \in \N)$に対して
+\[
+	S^{n-1} =	\{	x	\in \R^n \: | \: d(x,\boldsymbol{0})	=1	
+						\}
+\]
+とおき，$(S^{n-1},d)$または単に$S^{n-1}$を$n-1$次元\textbf{球面}（sphere）と呼ぶ．
+$S^0$は2点，$S^1$は$\R^n$の原点を中心とする半径1の円周，$S^2$は$\R^3$の原点を中心とする
+半径$1$の球面である．$S^2$の点$x=(x_1,	x_2,	x_3)$で$(0,0,1)$とは異なるものをとり，
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=100.4mm,height=46.8mm]{fig1x4.bmp}
+	\label{fig1x4}
+\end{figure}
+それに$\R^2$の点$y=(y_1,	y_2)$を次のように対応させよう．
+\[
+	y_1	=	\frac{x_1}{1-x_3},	\quad	y_2	=	\frac{x_2}{1-x_3}.
+\]
+このとき，$S^2	-	\{(0,0.1)\}$から$\R^2$への写像$F$を，$F(x)=y$とおいて定めれば，
+$F$は連続写像となる，このことを以下で示す．まず$\delta > 0$を導き出すために準備の計算をしておく．
+\begin{align*}
+&d(x,y)	=	\sqrt{(x_1-y_1)^2	+	(x_2	-	y_2)^2	+	(x_3	-	y_3)^2}	\\
+&\Rightarrow	(x_1-y_1)^2	+	(x_2	-	y_2)^2	+	(x_3	-	y_3)^2	<	\delta^2	\\
+&\Rightarrow	x_1^2	-2x_1y_1	+	y_1^2	+	x_2^2	-2x_2y_2	+	y_2^2	+	x_3^2	-2x_3y_3	+	y_3^2	<	\delta^2
+\end{align*}
+ここで，$x_1^2	+	x_2^2	+	x_3^2	=1,	y_1^2	+	y_2^2	+	y_3^2	=1$だから，
+\begin{align*}
+\Rightarrow	2	-	2(x_1y_1	+	x_2	y_2	+	x_3	y_3)	<	\delta^2
+\end{align*}
+このとき
+\begin{align*}
+	&d(F(x),f(y))^2	\\
+									&=	\left(	\frac{x_1}{1-x_3}	-	\frac{y_1}{1-y_3}
+										\right)^2
+									+	\left(	\frac{x_2}{1-x_3}	-	\frac{y_2}{1-y_3}
+										\right)^2	
+									=	\frac{x_1^2	+	x_2^2}{(1-x_3)^2}	+	\frac{y_1^2	+	y_2^2}{(1-y_3)^2}
+										-	\frac{2(x_1y_1	+	x_2y_2)}{(1-x_3)(1-y_3)}	\\
+									&<	\frac{1-x_3^2}{(1-x_3)^2}	+	\frac{1-y_3^2}{(1-y_3)^2}
+										-	\frac{\delta^2	-	2	+	2x_3	y_3}{(1-x_3)(1-y_3)}
+									=	\frac{1+x_3}{1-x_3}	+	\frac{1+y_3}{1-y_3}	+	\frac{\delta^2	-2	+	2x_3	y_3}{(1-x_3)(1-y_3)}	\\
+									&<	\varepsilon^2
+\end{align*}
+最後の$\varepsilon$に関する不等式を$\delta$に関して整理する，
+\begin{align*}
+	&\Leftrightarrow	(1+x_3)(1-y_3)	+	(1+y_3)(1-x_3)	+	\delta^2	-2	x_3	y_3	<	\varepsilon^2(1-x_3)(1-y_3)	\\
+	&\Leftrightarrow	\delta^2	<	\varepsilon^2(1-x_3)(1-y_3)	\\
+	&\Leftrightarrow	\delta	<	\varepsilon	\sqrt{(1-x_3)(1-y_3)}
+\end{align*}
+と置けばよい ――．
+
+また，$\R^2$の点$y=(y_1,y_2)$に対して，図のような$(y_1,y_2,0)$と$(0,0,1)$を結ぶ直線の方程式は
+\[
+	\frac{x_1}{y_1}	=	\frac{x_2}{y_2}	=	\frac{x_3-1}{-1}	=	t
+\]
+よって，$x_1=y_1t,	x_2	=	y_2	t,	x_3	=1-t$．$(x_1,x_2,x_3)$を$S^2	-	\{ (0,0,1) \}$上の点とすると，
+\begin{align*}
+x_1^2	+	x_2^2	+	x_3^2	=	y_1^2	t^2	+	y_2^2t^2	+	(1-t)^2	=1	\\
+&\Rightarrow	(y_1^2	+	y_2^2	+	1)t^2	-2t	=	0	\\
+&\Rightarrow	t=0	,	\frac{2}{y_1^2	+	y_2^2	+1}.
+\end{align*}
+よって
+\[
+	x_1	=	\frac{2y_1}{y_1^2	+	y_2^2	+1},	\quad
+	x_2	=	\frac{2y_2}{y_1^2	+	y_2^2	+1},	\quad
+	x_3	=	\frac{y_1^2	+	y_2^2	-1}{y_1^2	+	y_2^2	+1}
+\]
+とおける．$\R^2$から$S^2 - \{ (0,0,1) \}$へのこの写像$G(y)=x$は連続である，
+このことを示す．任意の$\varepsilon	>	0$に対応する$\delta >0$がわかっているものとして計算すると，
+$x,y	\in	\R^2$として
+\[
+	d(x,y)^2	=	(x_1	-	y_1)^2	+	(x_2	-	y_2)^2	<	\delta^2
+\]
+\begin{align*}
+&d(G(x),G(y))^2	\\
+&=\left(	\frac{2x_1}{x_1^2	+	x_2^2	+1}	-	\frac{2y_1}{y_1^2	+	y_2^2	+1}
+	\right)^2
+	+
+	\left(	\frac{2x_2}{x_1^2	+	x_2^2	+1}	-	\frac{2y_2}{y_1^2	+	y_2^2	+1}
+	\right)^2
+	+
+	\left(	\frac{x_1^2	+	x_2^2	-1}{x_1^2	+	x_2^2	+1}	-	\frac{y_1^2	+	y_2^2	-1}{y_1^2	+	y_2^2	+1}
+	\right)^2	\\
+&=\frac{1}{(x_1^2	+	x_2^2	+	1)^2(y_1^2	+	y_2^2	+1)^2}	\\
+&\quad	\bigg\{	4x_1^2	(y_1^2+y_2^2+1)^2
+					-	8x_1y_1 (x_1^2+x_2^2	+1)(y_1^2+y_2^2+1)
+					+	4y_1^2	(x_1^2+x_2^2	+1)^2	\\
+&\quad		+	4x_2^2	(y_1^2+y_2^2+1)^2
+					-	8x_2y_2 (x_1^2+x_2^2	+1)(y_1^2+y_2^2+1)
+					+	4y_2^2	(x_1^2+x_2^2	+1)^2	\\
+&\quad		+	(x_1^2	+	x_2^2-1)^2(y_1^2	+y_2^2	+1)^2
+					+	(y_1^2+y_2^2-1)^2(x_1^2+x_2^2-1)^2	\\
+&\quad		-	2(x_1^2	+	x_2^2-1)(y_1^2+y_2^2-1)(x_1^2+x_2^2+1)(y_1^2+y_2^2+1)
+				\bigg\}	\\
+&=\frac{1}{(x_1^2	+	x_2^2	+	1)^2(y_1^2	+	y_2^2	+1)^2}	\\
+&\quad	\bigg[
+					(4x_1^2	+	4x_2^2	+	x_1^4	+	x_2^4	+	1	+	2x_1^2x_2^2	-	2x_1^2	-	2x_2^2)(y_1^2+y_2^2+1)^2	\\
+&\quad	+	(4y_1^2	+	4y_2^2	+	y_1^4	+	y_2^4	+	1	+	2y_1^2y_2^2	-	2y_1^2	-	2y_2^2)(x_1^2+x_2^2+1)^2	\\
+&\quad	-	\bigg\{	8x_1y_1	+	8x_2y_2	+2(x_1^2	+x_2^2	-1)(y_1^2+y_2^2-1)
+					\bigg\}	(x_1^2+x_2^2+1)(y_1^2+y_2^2+1)
+				\bigg]	\\
+&=\frac{1}{(x_1^2+x_2^2	+1)^2(y_1^2+y_2^2+1)^2}	\\
+&\quad	\bigg[
+					(2x_1^2	+	2x_2^2	+	x_1^4	+	x_2^4	+	1	+	2x_1^2x_2^2)(y_1^2+y_2^2+1)^2	\\
+&\quad	+	(2y_1^2	+	2y_2^2	+	y_1^4	+	y_2^4	+	1	+	2y_1^2y_2^2)(x_1^2+x_2^2+1)^2	\\
+&\quad	-	\bigg\{	8x_1y_1	+	8x_2y_2	+2(x_1^2	+x_2^2)(y_1^2+y_2^2)	-2(x_1^2+x_2^2)	-2(y_1^2+y_2^2)	+2
+					\bigg\}	(x_1^2+x_2^2+1)(y_1^2+y_2^2+1)
+				\bigg]	\\
+\end{align*}
+\begin{align*}
+&=\frac{1}{(x_1^2+x_2^2	+1)^2(y_1^2+y_2^2+1)^2}	\\
+&\quad	\bigg[
+					(2x_1^2	+	2x_2^2	+	x_1^4	+	x_2^4	+	1	+	2x_1^2x_2^2)(y_1^2+y_2^2+1)^2	\\
+&\quad	+	(2y_1^2	+	2y_2^2	+	y_1^4	+	y_2^4	+	1	+	2y_1^2y_2^2)(x_1^2+x_2^2+1)^2	\\
+&\quad	-	\bigg\{	8x_1y_1	+	8x_2y_2	+2(x_1^2	+x_2^2)(y_1^2+y_2^2)	-2(x_1^2+x_2^2)	-2(y_1^2+y_2^2)	+2
+					\bigg\}	(x_1^2+x_2^2+1)(y_1^2+y_2^2+1)
+				\bigg]	\\
+&=\frac{1}{(x_1^2+x_2^2	+1)^2(y_1^2+y_2^2+1)^2}	\\
+&\quad	\bigg[
+					(x_1^2	+	x_2^2	+1)^2(y_1^2+y_2^2+1)^2	+	(y_1^2	+	y_2^2	+1)^2(x_1^2+x_2^2+1)^2	\\
+&\quad	-	\bigg\{	8x_1y_1	+	8x_2y_2	+2(x_1^2y_1^2	+	x_1^2	y_2^2	+x_2^2	y_1^2+x_2^2y_2^2)	-2x_1^2-2x_2^2	-2y_1^2-2y_2^2	+2
+					\bigg\}	(x_1^2+x_2^2+1)(y_1^2+y_2^2+1)
+				\bigg]	\\
+&=2-\frac{2}{(x_1^2+x_2^2	+1)(y_1^2+y_2^2+1)}
+				(4x_1y_1	+	4x_2y_2	+x_1^2y_1^2	+	x_1^2	y_2^2	+x_2^2	y_1^2+x_2^2y_2^2	-x_1^2-x_2^2	-y_1^2-y_2^2	+1)	\\
+&=2+\frac{2}{(x_1^2+x_2^2	+1)(y_1^2+y_2^2+1)}
+				((x_1	-	y_1)^2	+	(x_2-y_2)^2	-2x_1y_1	-	2x_2y_2	-x_1^2y_1^2	-	x_1^2	y_2^2	-x_2^2	y_1^2-x_2^2y_2^2	-1)	\\
+&=2+\frac{2}{(x_1^2+x_2^2	+1)(y_1^2+y_2^2+1)}	\\
+&				((x_1	-	y_1)^2	+	(x_2-y_2)^2	-	(x_1^2	+x_2^2	+1)(y_1^2	+y_2^2	+1)	+	x_1^2+x_2^2	+	y_1^2	+	y_2^2	-	2x_1y_1	-	2x_2y_2)	\\
+&=2-2	+\frac{2}{(x_1^2+x_2^2	+1)(y_1^2+y_2^2+1)}
+				((x_1	-	y_1)^2	+	(x_2-y_2)^2	+	(x_1	-	y_1)^2	+	(x_2	-	y_2)^2)	\\
+&=\frac{4((x_1	-	y_1)^2	+	(x_2-y_2)^2)}{(x_1^2+x_2^2	+1)(y_1^2+y_2^2+1)}	\\
+&<\frac{4\delta^2}{(x_1^2+x_2^2	+1)(y_1^2+y_2^2+1)}	<	\varepsilon^2
+\end{align*}
+よって，$\displaystyle	\delta	<	\frac{\varepsilon}{2}\sqrt{(x_1^2+x_2^2	+1)(y_1^2	+	y_2^2	+1)}$
+なる$\delta>0$を選べば良い――．
+しかも$F$の逆写像となることが以下のように示される．
+\begin{align*}
+	\frac{2	\left(\displaystyle
+						\frac{x_1}{1-x_3}
+					\right)}{	\displaystyle
+					\left(
+						\frac{x_1}{1-x_3}
+					\right)^2
+					+
+					\left(
+						\frac{x_2}{1-x_3}
+					\right)^2
+					}
+&=	\frac{2x_1(1-x_3)}{x_1^2	+	x_2^2	+	(1-x)^2}	
+	=	\frac{2x_1(1-x_3)}{x_1^2	+	x_2^2	+	x_3^2	-2x_3	+1}	\\
+&=	\frac{2x_1(1-x_3)}{2(1-x_3)}	=	x_1,
+\end{align*}
+$x_2$についても同様，$x_3$について
+\begin{align*}
+	\frac{\displaystyle
+					\left(	\frac{x_1}{1-x_3}
+					\right)^2	+
+					\left(	\frac{x_2}{1-x_3}
+					\right)^2
+					-1
+				}{\displaystyle
+					\left(	\frac{x_1}{1-x_3}
+					\right)^2	+
+					\left(	\frac{x_2}{1-x_3}
+					\right)^2
+					+1
+				}
+&=	\frac{x_1^2	+	x_2^2	-1	+	2x_3	-	x_3^2}{x_1^2	+	x_2^2	+	1	-2x_3	+x_3^2}	\\
+&=	\frac{-2x_3^2	+	2x_3}{2-2x_3}=x_3
+\end{align*}
+よって，$G \circ F$は恒等写像である．$G	\circ F$は
+\[
+	\frac{\displaystyle	\frac{2y_1}{y_1^2	+	y_2^2	+1}}{1-	\displaystyle	\frac{y_1^2	+	y_2^2	-1}{y_1^2	+	y_2^2	+1}}
+=	\frac{2y_1}{y_1^2	+	y_2^2	+1	-	y_1^2	-	y_2^2	+1}	=	y_2
+\]
+$y_2$も同様．
+
+$G \circ F, F \circ F$は全単射であるから，$G,F$は全単射．したがって$\R^2 \approx S^2 - \{(0,0,1)\}$．
+（\S \ref{sec3x2}で示されるように，$\R^2$と$S^2$とは同位相にはならない．）
+\■

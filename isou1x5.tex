@@ -1,0 +1,170 @@
+\section{等距離写像，直交群}
+
+$(X,d),(Y,d')$をそれぞれ距離空間としよう．写像$F:X \to Y$は，つぎの条件がみたされるとき
+$(X,d)$から$(Y,d)'$への（または$X$から$Y$への）\textbf{等距離写像}（isometry）と呼ばれる．
+\begin{equation}
+	d'(F(x),F(y))	d(x,y)	\quad	(\forall	x,y	\in	X).
+\label{eq1x6}
+\end{equation}
+等距離写像が単射でありしかも位相写像となる，このことを以下で示す．
+まず，
+\[
+	F(x) = F(y) \Leftrightarrow d'(F(x),F(y)) = d(x,y) = 0 \Leftrightarrow x=y,
+\]
+そして，任意の$\varepsilon > 0$に対して$0< \delta = \varepsilon$とおくと
+\[
+	d(x,y)	<	\delta	\Rightarrow	d(F(x),F(y))	<\delta	=	\varepsilon
+\]
+――．その逆は，前節のいろいろな例からもわかるように，一般には成り立たない．
+
+距離空間$(X,d)$に対して，$X$をそれ自身の上へ写す位相写像全体のなす集合
+を$\text{Homeo }(X,d)$と書こう．$\text{Homeo }(X,d)$は写像の合成を算法とする群となる．
+\begin{list}{}{}
+	\item	(ⅰ）$f,g \in \text{Homeo }(X,d)$とすると，$f	\circ g \in \text{Homeo }(X,d)$，
+	\item	(ⅱ）$f,g,h \in \text{Homeo }(X,d)$とすると，$(f \circ g) \circ h = f \circ (g \circ h)$は写像の性質より示される，
+	\item	(ⅲ）単位元は恒等写像，
+	\item	(ⅳ）逆元は逆写像．
+\end{list}
+$\text{Homeo }(X,d)$を$(X,d)$の\textbf{位相置換群}と呼ぼう．一方，$X$をそれ自身の上へ写す
+等距離写像全体の成す群を$\text{Iso }(X,d)$と書けば，これは$\text{Homeo }(X,d)$の部分群となる．
+$\text{Iso }(X,d)$を$(X,d)$の\textbf{等距離置換群}と呼ぶことにする．$(X,d) \approx (X',d')$ならば，
+$\text{Homeo }(X,d) \cong \text{Homeo }(X',d')$（群同型）となる，このことを以下で示す．
+$(X,d) \approx (X',d')$ならば位相写像$F(X,d) \to (X',d')$が存在する．
+$f \in \text{Homeo }(X,d)$に対して，$F \circ f \circ F^{-1} \in \text{Homeo } (X',d')$を
+対応させればよい．
+\[
+	(F	\circ f \circ F^{-1})	\circ (F \circ g \circ F^{-1}) = F \circ f \circ g \circ F^{-1}
+\]
+――．
+
+また$d$が$X$の
+離散計量ならば，明らかに$\text{Homeo }(X,d) = \mathfrak{S}(X)$（$X$の全置換群）となる．
+たとえば，$(\R,d)$を1次元 Euclid空間，$(\Z,d)$をその部分空間とすると，
+$\text{Homeo }(\Z,d) = \mathfrak{S}(\Z)$である．しかし，$\text{Iso }(\Z,d)$は
+$\mathfrak{S}(\Z)$とは異なる．$\text{Iso }(\Z,d)$の元$\sigma,\tau_n \: (n\in \Z)$として，
+$\Z$の任意の元$x$に対して，$\sigma(x) = -x$によって定まるもの，および$\tau_n (x) = x+n$に
+よって定まるものがある．実は，$g$を$\text{Iso }(\Z ,d)$の任意の元とするとき，
+$g(0)=n$とすれば，$g=\tau_n$または$\tau_n \circ \sigma$となることがわかる．
+（これは容易に確かめられるから，読者に任せる）．このように，
+$\text{Homeo }(X,d)$と$\text{Iso }(X,d)$とは一般には非常にことなった群である．
+
+$\R^n$の置換群として，\textbf{$n$次一次線形群}（general linear group of degree n)
+$\text{GL}_n(\R)$がある．$\text{GL}_n (\R)$は$n$次元実正方行列$(x_{ij}) \: (1 \leqq i,j \leqq n, x_{ij} \in \R)$
+で行列式$\det (x_{ij}) \ne 0$となるものの全体から成る群で，その各元$(x_{ij})$は$\R$上のベクトル
+空kな$\R^n$の線形変換：
+\[
+	(x_{ij}) : \begin{bmatrix}
+								u_1	\\	\vdots	\\	u_n
+							\end{bmatrix}
+							\to
+						\begin{bmatrix}
+								v_1	\\	\vdots	\\	v_n
+						\end{bmatrix},
+					\quad	v_i	=	\sum_{j=1}^{n}	x_i{ij}	u_j
+\]
+を引き起こす．この線形変換を$L_{(x_{ij})}$と書けば，明らかに$L_{(x_{ij})}$は
+Euclid 空間$\R^n$からそれ自身の上への連続写像となり，$L_{(x_{ij})^{-1}}$はその連続な
+逆写像である．ゆえに，$L_{(x_{ij})}$は$\text{Homeo }(\R^n,d)$の元となる．
+$\text{GL}_n(\R)$の元$g$に$\text{Homeo }(\R^n,d)$の元$L_g$を対応させる写像は明らかに
+群の順同型写像であり，しかも単射だから，この写像による像と$\text{GL}_n (\R)$とを同一視し，
+$\text{GL}_n(\R)$を$\text{Homeo }(\R^n,d)$の部分群と見なすことにしよう．
+\textbf{$n$次特殊線形群}（special linear group of degree n）$ \text{SL}_n (\R)
+(= \{ g \in \text{GL}_n (\R) \: | \: \det g = 1 \}$）も$\text{Homeo }(\R^n, d)$
+部分群と見なされる．
+$\text{GL}_n (\R9 \cap \text{Iso }(\R^n ,d)$を\textbf{n次直交群}（orthogonal group）と呼び
+$O(n)$と表わす．また，$\text{SL}_n(\R) \cap O(n)$を$n$次の\textbf{回転群}（rotation group）または
+\textbf{固有直交群}（special orthogonal group）と呼び$SO(n)$と表わす．$\R^n$の元を縦ベクトル
+として表わし，その内積を$\langle u,v \rangle \: (u,v \in \R^n)$と書けば，
+$^tuv$（$^tu$は縦ベクトル$u$の転置ベクトル）となる．$GL_n(\R)$の任意の元$g$に対して，
+$\langle g(u), g(v) \rangle = \: ^tu( \: ^tgg)v$（$^tg$は$g$の転置行列）だから，
+$^tgg=1_n$（$n$次単位行列）ならば$g \in O(n)$となる．
+$GL_n(\R)$の任意の元$g$に対して，$\langle g(u), g(v) \rangle = ^t u ( ^g g) v$
+（実際，このとき，$d(g(u),g(v))= \langle g(u) - g(v), g(u) - g(v) \rangle^{1/2} = 
+\langle g(u-v),g(u-v) \rangle^{1/2} = \langle u-v, u-v \rangle^{1/2} = d(u,v)$となる．）
+また，逆に$g \in O(n)$とすると，$g \in O(n)$とすると，$\R^n$の任意の元$u,v$に対して，
+$\langle	g(u),g(v) \rangle = \langle	u,v	\rangle$となる．
+（実際，$d(g(u),g(v))^2= \langle	g(u)-g(v)	,	g(u)-g(v)	\rangle = \langle	g(u),g(v) \rangle - 2 \langle	g(u),g(v) \rangle
++ \langle	g(v), g(v) \rangle$となるが，
+$\langle	g(u),g(u)	\rangle	=	\langle	g(u)	-	\boldsymbol{0}	,	g(u)	-	\boldsymbol{0}	\rangle
+=\langle	g(u)	-	g(\boldsymbol{0})	,	g(u)	-	g(\boldsymbol{0})	\rangle
+=d(g(u),	g(\boldsymbol{0}))^2	=	d(u,\boldsymbol{0})^2	=	\langle	u,u\rangle$,
+同様に$\langle	g(v),	g(v)	\rangle	=	\langle	v,v	\rangle	$，さらに
+$d(g(u),g(v))^2	=	d(u,v)^2	=	\langle	u,u	\rangle	-	2	\langle	u,v	\rangle	+	\langle	v,v	\rangle$だから，
+$\langle	g(u),	g(v)	\rangle	=	\langle	u,v	\rangle$おｔなる．）ここで，単位ベクトル
+$e_1	=	(1,0,	\cdots	,	0),	e_2	=	(0,1,\cdots	,	0),	\cdots	,	e_n=(0,	\cdots	,	0,1)$をとって
+$\langle	g(e_i),g(e_j)	\rangle	=	^t	e_i	^tg	g	e_j	=	\langle	e_i,e_j	\rangle	=	\delta_{ij}$
+（Kronecker のデルタ）を用いれば，$	^tgg=1_n$が得られる．すなわち，
+\[
+	O(n)	=	\{	g	\in	GL_n	(\R)	\:	|	\:	^tgg=1_n	\}
+\]
+となる．$g	\in	O(n)$をとると，$\det ( ^tgg) = (	\det g)^2 = 1$，ゆえに，$\det g = \pm 1$であるから，
+$g	\in O(n)$に$\det g \in \{ \pm 1 \}$を対応させることによって群の順同型写像$\det : O(n) \to	\{ \pm \}$
+が得られる．$SO (n) = \Ker (\det )$だから，これは$O(n)$の正規部分群であり，容易にわかるように
+$ [ O(n) : SO(n) ] = 2$となる．特に$O(1) = \{ \pm 1 \}, SO(1) = \{ 1 \}$となってつまらないが，
+\[
+	SO(2) =	\left\{	\begin{bmatrix}
+										\cos	\theta	&	\sin	\theta	\\
+									-	\sin	\theta	&	\cos	\theta	
+									\end{bmatrix}
+						\bigg| \:	0	\leqq	\theta	<	2	\pi
+					\right\}
+\]
+となることが容易に確かめられる（読者自ら確かめられたい）．
+$GL_n (\R)$は Euclid 空間$\R^{n^2}$の部分集合として，部分距離空間となる．
+写像$\mu	:	GL_n (\R) \times GL_n (\R) \to GL_n (\R)$および
+$\nu : GL_n (\R) \to GL_n (\R)$を$\mu (g,h) = gh, \nu (g) = g^{-1}$によって
+定めると，$\mu, \nu$はともに連続写像となる（読者自ら確かめらてたい．）$SL_n (\R), O(n),
+SO(n)$など$GL_n (\R)$の部分群についても同様のことがいえる．これらの群は，
+位相群と呼ばれる群の典型的な例であるが，そのことについては後に（\S \ref{sec4x2}）述べよう）．
+
+\問題{1.16}
+$G = SO(2)$とし，$\R^2$の元$u$に対して$G(u) = \{ v \in \R^2 \: | \: \exists g ( g \in G \wedge v = g(u)) \}$
+と置く．$G(u)$は原点$\boldsymbol{0}$を中心とし，点$u$を通る円周と一致することを示せ．
+
+\証明
+原点を$\boldsymbol{0}$とし，点$u$を通り円周を$S_u$とおく．原点$\boldsymbol{0}$と$u$の距離を
+$r_u$とおくと，
+\[
+	S_u = \{ ( x,y) \in \R^2 \: | \: x^2 + y^2 = r_u^2 \}
+\]
+である．まず$G(u) \subset S_u$を示す．$v \in G(u)$とすると，ある$g_v \in SO(2)$が存在して，
+$v = g_v(u)$が成り立つ．
+\[
+	g_v	=	\begin{bmatrix}
+					\cos \theta_v & \sin \theta_v \\
+				-	\sin \theta_v & \cos \theta_v
+				\end{bmatrix},
+	\quad	0	\leqq	\theta_v	<	2	\pi	
+\]
+$v = (v_x , v_y ) , u=(u_x	,	u_y)$とおくと
+\begin{align*}
+	v_x^2	+	v_y^2	&=	(	u_x	\cos	\theta_v	+	u_y	\sin	theta_v)^2	+	(-u_x	\sin	\theta	+	u_y	\cos	\theta_v)^2	\\
+								&=	u_x^2	\cos^2	\theta_v	+	2	u_x	u_y	\cos	\theta_v	\sin	\theta_v	+	u_y^2	\sin	\theta_v
+								 +	u_x^2	\sin^2	\theta_v	-	2	u_x	u_y	\cos	\theta_v	\sin	\theta_v	+	v_y^2	\cos	\theta_v	\\
+								&=	u_x^2	+	u_y^2	=	r_u^2
+\end{align*}
+よって$y	\in S_u$，$\therefore G(u) \subset S_u$．
+
+次に，$v \in S_u$とする．このとき$u$と原点$\boldsymbol{0}$と$v$のなす角を$\theta_v (0 \leqq \theta_v<2\pi)$と
+おくと，
+$\displaystyle
+	v	=	\begin{bmatrix}
+				\cos	\theta_v	&	\sin	\theta_v	\\
+			-	\sin	\theta_v	&	\cos	\theta_v
+			\end{bmatrix}
+			\begin{bmatrix}
+				u_x	\\	u_y
+			\end{bmatrix}
+$，$g=\begin{bmatrix}
+				\cos	\theta_v	&	\sin	\theta_v	\\
+			-	\sin	\theta_v	&	\cos	\theta_v
+			\end{bmatrix}
+$とおくと，$g	\in	SO(2)$，よって$S_u \subset G(u)$，以上より，$S_u = G(u)$.
+\■
+
+
+
+
+
+
+

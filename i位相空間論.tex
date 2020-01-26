@@ -1,0 +1,84 @@
+\documentclass{myjbook}
+\newcommand{\■}{\begin{flushright} ■ \end{flushright}}
+\newcommand{\□}{\begin{flushright} □ \end{flushright}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\証明}{\textgt{証明　}}
+\newcommand{\soji}{\text{∽}}
+\newcommand{\定義}[1]{\vspace{3mm}\textgt{定義#1．　}}
+\newcommand{\定理}[1]{\vspace{3mm}\textgt{定理} #1．}
+\newcommand{\命題}[1]{\vspace{3mm}\textgt{命題}\textgt{#1}\textgt{．　}}
+\newcommand{\問題}[1]{\vspace{3mm}\textgt{問題 #1．}}
+\newcommand{\補題}[1]{\vspace{3mm}\textgt{補題#1．}}
+\newcommand{\系}[1]{\vspace{3mm}\textgt{系#1．　}}
+\newcommand{\注意}[1]{\vspace{3mm}\textgt{注意}\textgt{#1}\textgt{．}}
+\newcommand{\例}[1]{\vspace{3mm}\textgt{例}\textgt{#1}\textgt{．}}
+\newcommand{\Aleph}{\boldsymbol{\aleph}}
+\newcommand{\解}{\vspace{3mm}\textgt{解　}}
+\newcommand{\公理}[1]{\vspace{3mm}\textgt{公理#1．　}}
+\newcommand{\例題}[1]{\vspace{3mm}\textgt{例題#1．　}}
+\newcommand{\Int}{\text{Int}}
+\newcommand{\framepage}[2]{%
+	\fbox{%
+		\begin{minipage}[t]{#1\textwidth}#2\end{minipage}%
+	}% \fbox END
+} % \newcommand END
+\newcommand{\Ker}{\text{Ker }}
+\newcommand{\Img}{\text{Im }}
+\newcommand{\id}{\text{id }}
+\newcommand{\diam}{\text{diam }}
+\newcommand{\Tan}{\text{Tan} }
+
+\usepackage{graphicx}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage[mathscr]{eucal}
+\usepackage{latexsym}
+\usepackage{epic,eepic}
+\usepackage{ascmac}
+\usepackage{amscd}
+\usepackage[all]{xy}
+
+
+%目次の深さの設定
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+	\frontmatter
+
+
+	\tableofcontents
+
+	\mainmatter
+
+	\setcounter{chapter}{-1}
+	\include{shugo0}
+
+	\setcounter{chapter}{0}
+
+	\include{isou1}
+	\include{isou1x2}
+	\include{isou1x3}
+	\include{isou1x4}
+	\include{isou1x5}
+	\include{isou1x6}
+	\include{isou1x7}
+	\include{isou1x8}
+	\include{isou1x9}
+	\include{isou1x10}
+
+	\include{isou2}
+	\include{isou2x2}
+	\include{isou2x3}
+	\include{isou2x4}
+	\include{isou2x5}
+	\include{isou2x6}
+	\include{isou2x7}
+	\include{isou2x8}
+	\include{isou2x9}
+	\include{isou2x10}
+
+\end{document}

@@ -1,0 +1,41 @@
+\chapter{位相空間空間}
+\section{閉包写像と位相空間}
+
+第1章では Euclid 空間$\R^n$，関数の空間$S_2(a,b)$，$p$進体$\Q_p$などいろいろの
+距離空間について述べた．\S 1.10 の定理1.10では距離空間$X$の部分集合$S$の閉包が
+四つの簡潔で美しい性質 (Cl1) - (Cl4) を持つことが示され，定理1.10 では
+距離空間$X$から距離空間$Y$への写像$f$が連続であるか否かを閉包の概念を利用すると
+簡潔に言い表せることが示された．一般に集合$X$とそのべき集合$\mathcal{P}(X)$から
+$\mathcal{P}(X)$への写像$Cl$が定理1.8の (Cl1) - (Cl4) と同様の性質を持つとしたら
+$X$についてどのようなことが言えるだろうか．もし (Cl1) - (Cl4)のみを
+仮定して得られる定理があれば，その特に$X$を計量$d$を持つ距離空間とし，
+$Cl$おｗ$d$によって定まる閉包写像とした場合にも成り立つはずである．
+このような見地から，ここでは Kuratowsk に従って次のような定義をしよう．
+
+集合$X$と，写像$Cl : \mathcal{P}(X) \rightarrow \mathcal{P}(X)$が与えられ，
+次の条件 (Cl1) - (Cl4) が満たされているとする．
+\begin{list}{}{}
+	\item	(Cl1) $Cl ( \varnothing ) = \varnothing$
+	\item	(Cl2) $Cl ( S \cup T ) = Cl ( S ) \cup Cl ( T ) \quad (S,T \in \mathcal{P}(X) )$
+	\item	(Cl3) $Cl ( S ) \supset S \quad ( S \in \mathcal{P}(X))$
+	\item	(Cl4) $Cl \circ Cl = Cl$.
+\end{list}
+このとき順序対$(X, Cl)$（または略して単に$X$）を\textbf{位相空間}（topological space）
+と呼び，$X$を$(X,Cl)$ の\textbf{台}（support），$Cl$を$(X,Cl)$（または$X$の\textbf{閉包写像}
+（closure mapping）と呼ぶ．$Cl$または$Cl_X$とも書かれる．
+
+$X$の部分集合$S$に対して$Cl(S)$は$\overline{S}$または$S^a$とも書かれ，$S$の\textbf{閉包}
+（closure）と呼ばれる．上の(Cl1) - (Cl4) は\textbf{閉包の公理}（axioms of closures）と呼ばれ，
+(Cl2) は \textbf{加法律} (additive law)，(Cl3) は\textbf{包含律}（inclusion law），
+(Cl4) は\textbf{べき等律}（idempotent law）と呼ばれる．また$S,T \subset X$，$S \subset T$のとき
+$\overline{S} \subset \overline{T}$が成り立つことは，定理1.8系の証明と同じ論法によって示される．
+
+
+
+
+（中略）
+
+\例{2.2}
+$X$を集合，$Cl(\varnothing) = \varnothing, Cl(S) = X \: (S \subset X , S \ne \varnothing)$
+とおけば$(X , Cl)$は位相空間となる．この位相空間を$X$を台とする\textbf{密着}（concrete）
+（位相）空間と呼ぶ．

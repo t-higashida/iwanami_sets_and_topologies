@@ -1,0 +1,226 @@
+\section{付値，$p$進計量}
+
+1次元 Euclid 空間$\R$の計量$d$を導入するために，われわれは$\R$の元の絶対値の
+性質を用いた．絶対値の概念をより一般化して，つぎに述べる体の‘付値’の概念が
+得られる．
+
+$K$を体，$v$を$K$から実数体$\R$への写像とする．$v$がつぎの条件（ⅰ）-（ⅲ）を満たすとき，
+$v$は$K$は\textbf{付値}（valuation）と呼ばれる．
+\begin{list}{}{}
+	\item	（ⅰ）$K$の任意の元$x$に対して$v(x) \geqq 0$．または$v(x)=0 \Leftrightarrow x=0$
+	\item	（ⅱ）$v(xy)	=	v(x)v(y)	\quad	(x,y	\in	K)$.
+	\item	（ⅲ)	$v(x+y)	\leqq	v(x)	+	v(y)	\quad	(x,y	\in	K)$．
+\end{list}
+$K$が複素数体$\C$の部分体であるとき，$K$の元$x$に対して，$v(x)	=	|x|$（$x$の絶対値）
+とおけば，$v$は明らかに$K$の付値となる．一般に体$K$の付値$v$が与えられたとき，
+$K$の元$x,y$に対して$d(x,y)=v(x-y)$とおけば$K$の計量が得られることは容易に推察されよう．
+しかし，このことについて説明する前に，特に$K$が有理数体$\Q$である場合の付値の例をあげよう．
+
+$p$を素数，$x$を$0$とは異なる整数とすれば，$x$は$\pm p^er$（$p$と$r$は互いに素）の形に
+一般的に表わされる．
+\footnote{素因数分解の一意性 $x=x_1^{n_1}x_2^{n_2} \cdots x_m^{n_m}$，$x_1, \cdots , x_m$は素数，
+より，$x$と$p$が互いに素ならば，$r=x$として$x=p^0r$である．
+$x$が$p$の倍数のときには，$x=p^e r$である．
+}
+このとき，$e$を$x$の\textbf{ $p$指数}（p-exponent）と呼んで，
+$e=e_p(x)$と表わすことにする．いま$x$を$0$とは異なる有理数としよう．このとき
+$x=r/s (r,s \in \Z, r \ne 0 , s \ne 0)$と書けるが，$e_p(x) = e_p(r) - e_p(s)$とおけば，
+$e_p(x)$は$r,s$の選び方によらないで$x$に定まる．ここで，$x$を$0$ではない有理数とするとき
+\[
+	v_p(x)	=	p^{-e_p(x)}
+\]
+とおき，$x=0$のときには$v_p(0)=0$とおこう．たとえば，$v_2(2)	=	2^{-1},v_2(3)	=1,
+v_2(4)=2^{-2},	v_2(6)=2^{-1},	\cdots	$．
+$v_p$が付値の条件（ⅰ）,（ⅱ）満たすことは，以下のようにして示される．
+（ⅰ）$p \geqq 0$だから$v_p(x)	=	p^{-e_p(x)}	\geqq	0$である．
+定義より，$x=0 \Rightarrow	v_p(x)=0$．また$x	\ne	0	\Rightarrow	v_p(x)	=0$．
+（ⅱ）$x	=	r_x	/	s_x$，$y	=r_y	/	s_y$とおくと，
+\[
+	e_p(x)	=	e_p(r_x)	-	e_p(s_x),	\quad	e_p(y)	=	e_p(r_y)	-	e_p(s_y)
+\]
+このとき
+\[
+	e_p(xy)	=	e_p(r_xr_y)	-	e_p(s_xs_y)
+\]
+$r_x	=	\pm	p^{e_p(r_x)}r_{r_x},	r_y	=	\pm	p^{e_p(r_y)}r_{r_y}$だから，
+$r_xr_y	=	\pm	p^{e_p(r_x)	+	e_p(r_y)}	r_{r_x}	r_{r_y}$．
+同様に$e_p(r_xr_y)	=	e_p(r_x)	+	e_p(r_y)$．
+
+また，
+\begin{equation}
+	v_p(x+y)	\leqq	\max	\{	v_p(x),	v_p(y)	\}	\quad	(x,y	\in	\Q)
+\label{eq1x7}
+\end{equation}
+が成り立つことも以下のようにして確かめられる，
+\[
+	x=\pm p^{e_x}r_x,	\quad	y=\pm p^{e_y}r_y,	\quad	\min \{ e_x, e_y \} = e
+\]
+とおくと$	v_p(x)	=	p^{-e_x},	\:	v_p(y)	=	p^{-e_y}$であるが，
+\begin{align*}
+	v_p(x+y)	&=	p^{-e_p(x+y)}	=	v_p(\pm p^{e_x}	r_x		\pm	p^{e_y}r_y)
+							=	v_p(p^{e}	\{	p^{e_x-e}r_x	\pm	p^{e_y-e}r_y	\})	\\
+						&=	p^{-e}	=	p^{-\min \{ e_x , e_y	\}	}
+\end{align*}
+$	e_x	<	e_y$のとき，$p^{-e}	=	p^{-e_x}	\leqq	\max	\{	\:	p^{-e_x}	,	p^{-e_y}	\:	\}$
+よって$v_p(x+y) \leqq \max \{ v_p(x), v_p(y) \}$．
+（\ref{eq1x7}）から（ⅲ）が導かれる．
+
+
+\例{}
+$\displaystyle	
+	v_2	\left(\frac{1}{8}
+			\right) =	2^{-(-3)} = 8, \quad 
+	v_2	\left(	\frac{-4}{27}	
+			\right)	= 2^{-2} = -\frac{1}{4}
+$．
+このとき
+\begin{align*}
+	v_2	\left(\frac{1}{8} - \frac{4}{27}	\right) 
+&= v_2	\left(\frac{27 - 32}{216}	\right) =	v_2	\left(\frac{ - 5}{216}	\right)	\\
+&= v_2	\left(\frac{-5}{2^3 27}	\right) =	2^{-(-3)}	=8	\\
+\end{align*}
+
+こうして各素数$p$に対して$\Q$の付値$v_p$が得られた．$v_p$のことを$\Q$の\textbf{$p$進付値}
+（$p$-adlic valuation）と呼ぶ．上の条件（\ref{eq1x7}）は，たとえば$v_p(x)$のかわりに
+$\Q$の元の絶対値$v(x) = |x|$をとれば成り立たない．
+（たとえば$x>0,x>0$のとき，$|x + y | \not< \max \{ \: |x| , |y| \:	\}$）
+
+$\Q$の付値$v$で，
+$v(x) = |x|$とおいて得られるものを，$\Q$の\textbf{Archimedes 的付値}または\textbf{無限付値}
+（infinite valuation）と呼んで，$v_\infty$とも表わす．また，一般に体$K$の付値$v$が，
+条件
+\[
+	v(x+y)	\leqq	\max	\{	\:	v(x)	,	v(y)	\:	\}	\quad	(x,y	\in	K)
+\]
+を満たすならば，$v$は$K$の\textbf{非 Archimedes 的付値}と呼ばれる．
+
+\問題{1.17}
+$v$を体$K$の非Archimedes的付値，$x,y \in K, \: v(x) < v(y)$ならば
+$v(x+y) = v(y)$となることを示せ．[ヒント] $v(y) = v((x+y) - x) \leqq \max \{ v(x+y), v(x) \}$を示し，
+さらに$v(x) < v(y)$より$v(y) \geqq v(x+y)$を成り立つことを示せばよい．
+
+\証明
+$v(y) = v((x+y) - x) \leqq \max \{ \: v(x+y), v(x) \: \}$を示す．
+$v$は付値であるから，（ⅲ）より，$v((x+y) - x) \leqq v(x+y)	+	v(-x)$．
+付値の条件（ⅱ）より
+\begin{align*}
+	v(-1)^2	&=	v((-1)	\cdot	(-1)	)	=	v(1)	=	1	\\
+	v(-1)		&=	1	\quad	(\because	\: v(-1)	>	0)
+\end{align*}
+よって$v(x) = v(-x)$．$v$は非 Archimedes的付値だから
+$v(y)=v((x+y)-x)	\leqq	\max \{ \: v(x+y),v(x) \: \}$，
+ここで$v(y) \leqq v(x)$は仮定に反するから$v(y) \leqq v(x+y)$．
+
+一方，$v(x+y) \leqq \max \{ \: v(x) , v(y) \: \}$であるが，
+$v(x) < v(y)$と仮定してあるので$v(x+y) \leqq v(y)$．
+以上より，$v(x+y) = v(y)$
+\■
+
+\定理{1.3}
+体$K$とその付値$v$が与えられているとき，$K$の任意の元$x,y$に対して
+$d(x,y) = v(x-y)$とおけば，$(K,d)$は距離空間となる．さらに，
+写像$\alpha	:	K	\times K	\to K, \alpha'	:	K \times	K	\to	K,
+\beta	:	K	\times	K	\to	K,	\gamma	:	K^*	\to	K^*$（$K^*$は$K$の
+零元とは異なる元全体の集合）をそれぞれ$\alpha(x,y) = x+y$，
+$\alpha'	(x,y)	=	x-y,	\beta(x,y)	=xy,	\gamma(x)=x^{-1}$によって定めると，
+$\alpha	,	\alpha'	,	\beta	,	\gamma$はみな連続写像となる．
+
+\証明$K$の乗法に関する単位元を普通のように$1$と書こう．すると$v(1^2)=v(1)^2	,v(1)>0$だから
+$v(1)=1$となる．また，$v(-1)^2	=	v((-1)^2)	=v(1)	=1$だから$v(-1)	=1$である．
+これから$v(x-y)=v(y-x)$がいえる．$d(x,y)=v(x-y)$が距離の公理を満たすことは，明らかであるから
+読者自ら確かめられたい．写像$\alpha$が連続であることは，
+\[
+	v((x+y)	-	v(x'+y'))	=v((x-x')	+	(y-y'))	\leqq	(x-x')	+	v(y-y')
+\]
+から，以下のようにして示すことができる．
+任意の$\varepsilon > 0$に対応する$\delta > 0$を求める．
+$\delta$がわかっているものとして，
+\begin{align*}
+	D((x_1,y_1),(x_2,y_2))	=	\sqrt{v(x_1	-x_2)^2	+	v(y_1-y_2)^2	}	<	\delta	\\
+	\Rightarrow	v(x_1	-	x_2)^2	+	v(y_1	-	y_2)^2	<	\delta^2
+\end{align*}
+このとき
+\begin{align*}
+	d(\alpha(x_1,	y_1)	,	\alpha	(	x_2,	y_2))^2	
+&=	d(x_1	+	y_1,	x_2	+	y_2)^2
+	=	v((x_1	+	y_1)	-	(x_2	+	y_2))^2
+	=	v((x_1	-	x_2)	+	(y_1	+	y_2))^2	\\
+&\leqq	\{	v(x_1-x_2)	+	v(y_1	-	y_2)	\}^2
+\end{align*}
+ここで$2	\{	v(x_1	-	x_2)^2	+	v(y_1	-	y_2)^2	\}	\geqq	\{	\:	v(x_1	-	x_2)	+	v(y_1	-	y_2)	\:	\}^2$
+だから
+\footnote{
+\begin{align*}
+	&2v(x_1	-	x_2)^2	+	2v(y_1	-	y_2)^2	-	\{	v(x_1	-	x_2)	+	y(y_1	+	y_2)	\}^2	\\
+	&=	\{	\:	v(x_1	-	x_2)	-	v(y_1	-	y_2)	\:	\}^2	\geq	0	
+\end{align*}
+}，よって，$\displaystyle	\delta	\leqq	\frac{\varepsilon}{\sqrt{2}}$とおけば，
+\[
+	\leqq	2	\{	v(x_1	-	x_2)^2	+	v(y_1	-	y_2)^2	\}	<	2	\delta^2	\leqq	2	\frac{\varepsilon^2}{2}	=	\varepsilon^2
+\]
+――．
+
+
+$\alpha'$の連続性についても同様である，すなわち任意の$\varepsilon > 0$に対して，
+$\delta	>	0$を求める．
+\begin{align*}
+	&D((x_1,	y_1)	,	(x_2,	y_2))=	\sqrt{v(x_1-x_2)^2	+	v(y_1-y_2)^2}	<	\delta	\\
+&\Rightarrow	v(x_1-x_2)^2	+	v(y_1-y_2)^2	<	\delta^2	\\
+\end{align*}
+を踏まえて，
+\begin{align*}
+	d(\alpha'(x_1,y_1),	\alpha'(x_2,	y_2))^2
+&=	\{
+			v(\alpha'(x_1,y_1)	-	\alpha'(x_2,y_2))
+		\}^2	\\
+&=	\{	v((x_1	-	y_1)	-	(x_2	-	y_2))
+		\}^2	\\
+&=	\{v((x_1-x_2)	+	(y_2	-	y_1))
+		\}^2	\\
+&\leqq
+		\{
+			v(x_1	-	x_2)	+	v(y_1	-	y_2)
+		\}^2	\\
+&\leqq
+		2	\{	v(x_1-	x_2)^2	+	v(y_2	-	y_1)^2	\\
+&\leqq
+		2	\frac{\delta^2}{2}	<	\varepsilon^2.
+\end{align*}
+――．
+
+$\beta$の連続性は，\begin{align*}
+&	D((x_1	,	y_1)	,	(x_2,	y_2))	=	\sqrt{v(x_1-x_2)^2	+	v(y_1	-y_2)^2}	<	\delta	\\
+&\Rightarrow	v(x_1	-	x_2)^2	+	v(y_1	-	y_2)	^2	<	\delta^2
+\end{align*}
+これを踏まえて，
+\begin{align*}
+	d(\beta(x_1,	y_1)	,	\beta(x_2,	y_2))^2	
+&=	v(x_1y_1	-	x_2y_2)^2	\\
+&\leqq	\{	v(x_1)	v(y_1	-y_2)	+	v(x_1	-	x_2)	v(y_2)	\}^2	\\
+&\leqq	2	\{	v(x_1)	v(y_1	-y_2)	+	v(x_1	-	x_2)	v(y_2)	\}^2	\\
+\end{align*}
+ここで，$\displaystyle	\delta	=	\frac{	\varepsilon	}{\sqrt{2}	\max	\{	v(x_1)	,v(y_2)	\}}$とおくと，
+\begin{align*}
+	&\leqq	2	\{	\max	\{	v(x_1)	,	v(y_2)	\}	v(y_1-y_2)	+	\max	\{	v(x_1)	,	v(y_2)	\}v(x_1-x_2)	\}^2	\\
+	&=			2	\{	\max	\{	v(x_1)	,	v(y_2)	\}^2	\{	v(y_1-y_2)	+	v(x_1	-	x_2)	\}^2	\\
+	&=			2	\{	\max	\{	v(x_1)	,	v(y_2)	\}^2	\delta^2	\\
+	&\leqq	\varepsilon^2
+\end{align*}
+$(v(y')	\leqq	v(y'-y)	+v(y)$に注意するとよい．
+
+写像$\gamma$が連続であることを示すために，$x,y$を$K$の零元とは異なる元としよう．
+\[
+	v(x^{-1}	-	y^{-1})	=	v((y-x)x^{-1}y^{-1})	=	v(y-x)v(x^{-1})v(y^{-1})
+\]
+となるが，$v(x)v(x^{-1}	=1$だから$v(x^{-1}	=	v(x)^{-1}	,	v(y)^{-1}$である．さて，
+ここで，$d(x,y)$が‘十分に小さい’ときに，$v(x)^{-1}$と$v(y)^{-1}$の比も
+‘小さい’ことを示そう．実際，$v(x-y) \leqq v(x)/2$とすると，
+$v(x)	=	v((x-y)	+	y)	\leqq	v(x-y	+	v(y)	\leqq	v(x)/2	+	v(y)$だから
+$v(x)/2	\leqq	v(y)$となり，$v(x)v(y)^{-1}	\leqq	2$が成り立つ．
+したがって，$v(x-y)	\leqq	v(x)/2$のとき，$v(x)^{-1}v(y)^{-1}	\leqq	2v(x)^{-2}$となり，
+上式より，
+\[
+	v(x^{-1}	-	y^{-1})	\leqq	2v(y-x)	v(x)^{-2}
+\]
+がいえる．このことから$\gamma$が連続であることは容易にわかる．
+\■

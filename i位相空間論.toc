@@ -1,0 +1,26 @@
+\contentsline {part}{第\uppercase {i}部\hspace {1zw}集合論}{1}
+\contentsline {chapter}{\numberline {第0章}空集合から自然数まで}{3}
+\contentsline {section}{\numberline {0.1}集合論の生い立ち}{3}
+\contentsline {part}{第\uppercase {ii}部\hspace {1zw}位相}{5}
+\contentsline {chapter}{\numberline {第1章}距離空間}{7}
+\contentsline {section}{\numberline {1.1}距離空間}{7}
+\contentsline {section}{\numberline {1.2}2次形式と計量}{9}
+\contentsline {section}{\numberline {1.3}$\varepsilon $近傍，連続写像}{13}
+\contentsline {section}{\numberline {1.4}直積距離空間，部分距離空間}{20}
+\contentsline {section}{\numberline {1.5}等距離写像，直交群}{29}
+\contentsline {section}{\numberline {1.6}付値，$p$進計量}{32}
+\contentsline {section}{\numberline {1.7}距離空間のCauchy列，完備距離空間}{36}
+\contentsline {section}{\numberline {1.8}距離空間の完備拡大}{37}
+\contentsline {section}{\numberline {1.9}$p$進体}{38}
+\contentsline {section}{\numberline {1.10}閉包}{39}
+\contentsline {chapter}{\numberline {第2章}位相空間空間}{41}
+\contentsline {section}{\numberline {2.1}閉包写像と位相空間}{41}
+\contentsline {section}{\numberline {2.2}閉集合，開集合}{42}
+\contentsline {section}{\numberline {2.3}近傍}{43}
+\contentsline {section}{\numberline {2.4}近傍系と位相}{44}
+\contentsline {section}{\numberline {2.5}有効点列の収束，フィルター}{45}
+\contentsline {section}{\numberline {2.6}分離公理}{46}
+\contentsline {section}{\numberline {2.7}Urysonの補題，Tietze の拡張定理}{47}
+\contentsline {section}{\numberline {2.8}誘導位相}{48}
+\contentsline {section}{\numberline {2.9}距離空間の部分空間，直積空間，商空間}{49}
+\contentsline {section}{\numberline {2.10}位相空間の部分空間，直積空間，商空間}{50}

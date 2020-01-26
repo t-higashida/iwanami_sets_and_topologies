@@ -1,0 +1,178 @@
+\section{2次形式と計量}
+
+$V$を実数体$\R$上のベクトル空間，$B$を$V \times V$から$\R$への写像とする．
+$\R$の任意の元$a,b, \cdots, $の任意の元$u,v, \cdots $と表すとき，
+つぎの（ⅰ）-（ⅲ）が成り立てば，$B$は$V$上の\textbf{対称双1字形式}
+（symmetric bilinear form）と呼ばれる．
+\footnote{
+	\textbf{対称双1次形式} $\cdots$ ベクトルの内積が該当する．
+	『新版 線形代数』竹内康滋，廣森 勝久共著　培風館，命題 4.2.2 を参照．
+}
+\begin{list}{}{}
+	\item	（ⅰ）$B(u,v)=B(v,u)$
+	\item	（ⅱ）$B(u+v,w)=B(u,w)+B(v,w)$
+	\item	（ⅲ）$B(au,v)=aB(u,v)$.
+\end{list}
+
+
+ここで，$Q(u)	=	B(u,u)$とおけば，$Q(au)	=	B(au,au)	=	a^2	B(u,u)	=	a^2Q(u)$，
+$Q(u+v)-Q(u)-Q(v)	=	B(u+v,u+v)=2B(u,v)	+	B(u,u)	+	B(v,v)	-	B(u,u)	-	B(v,v)	=		2B(u,v)$
+がともに成り立つ．
+
+　
+
+\textbf{同伴2次形式}　・・・　ベクトルのノルム(長さ）が該当する．
+
+一般に，写像$Q:V \rightarrow \R$が与えられ，つぎの条件
+\begin{list}{}{}
+	\item	$Q(au)	=	a^2	Q(u)$
+	\item 写像$B: V \times V	\rightarrow \R$を$Q(u+v)-Q(u) -Q(v)	=	2B(u,v)$によって定めれば，$B$は$V$の上の対称双1次形式となる．
+\end{list}
+がともに満たされる時，$Q$を$V$上の\textbf{2次形式}（quadratic form）と呼び，
+$B$を$Q$の\textbf{同伴対称双1次形式}（assoiated symmetric biliniear form）と呼ぶ．
+
+
+p138，
+
+\例{1.1}
+$V$を$\R$上の有限次元ベクトル空間，$\{u_1,	u_2,	\cdots	,	u_n	\}	\:	(n\in	\N)$を
+その（$\R$上の）基底とする．$V$の元$x=\sum x_iu_i$，$y=\sum	y_i	u_i	\:	(x_i	,	y_i	\in	\R)$に対し，
+$\displaystyle	B(x,y)	=	\sum_{i=1}^n	x_i	y_i$とおけば，$B$は対称双1次形式である．
+\証明
+\begin{list}{}{}
+	\item	(ⅰ) $\displaystyle	B(x,y)	=	\sum_{i=1}^n	x_i	y_i	=	\sum_{i=1}^n	y_i	x_i	=B(y,x)$
+	\item (ⅱ) $\displaystyle	B(x+y,	z)	=	\sum_{i=1}^n	(x_i	+	y_i)z_i	=	\sum_{i=1}^n	(	x_i	z_i	+	y_iz_i)	=	\sum_{i=1}^{n}	x_i	z_i	+	\sum_{i=1}^{n}y_iz_i	=	B(x,z)	+	B(y,z)$
+	\item (ⅲ) $\displaystyle	B(ax,	y)	=	\sum_{i=1}^{n} a x_iy_i = a \sum_{i=1}^{n}x_iy_i	=	aB(x,y)$
+\end{list}
+
+$\R^n$の\textbf{内積}（inner product）と呼ばれる．$Q$を$B$の同伴2次形式とすれば，$x=\sum x_i u_i$に対し，
+$\displaystyle	Q(x)	=	\sum_{i=1}^{n}	x^2$となる．
+
+\例{1.2}
+$V$は例1.1の通りとし，$x=\sum	x_i	u_i,	\:	y=\sum	y_i	u_i$に対して，
+$\displaystyle	B(x,y)=\sum_{i,j=1}^{n}	x_i	a_{ij}y_j$（ただし$a_{ij}	\in	\R,	\	a_{ij}=a_{ji}$によって
+$B$を定めると，$B$は対称双1次形式となる．\証明
+\begin{list}{}{}
+	\item	(ⅰ) 
+\begin{align*}
+	B(x,y)	=	\sum_{i,j=1}^{n}	x_i	a_{ij}y_j	
+					&=			x_1	a_{11}	y_1	+	x_1	a_{12}	y_2	+	\cdots	+	x_1	a_{1n}y_n	+	\\
+					&\quad	x_2	a_{21}	y_1	+	x_2	a_{22}	y_2	+	\cdots	+	x_2	a_{2n}y_n	+	\\
+					&\quad	\cdots	\\
+					&\quad	x_n	a_{n1}	y_1	+	x_n	a_{n2}	y_2	+	\cdots	+	x_n	a_{nn}y_n	\\
+\text{(ここで和の方向を変えると，)}
+					&=			x_1	a_{11}	y_1	+	x_2	a_{21}	y_2	+	\cdots	+	x_n	a_{n1}y_1	+	\\
+					&\quad	x_1	a_{12}	y_2	+	x_2	a_{22}	y_2	+	\cdots	+	x_n	a_{n2}y_2	+	\\
+					&\quad	\cdots	\\
+					&\quad	x_1	a_{1n}	y_n+	x_2	a_{2n}	y_n	+	\cdots	+	x_n	a_{nn}y_n	\\
+	=B(y,x)
+\end{align*}
+	\item (ⅱ) $\displaystyle	B(x+y,z)=\sum_{i,j=1}^{n}	(x_i	+	y_i)a_{ij}z_j	=	\sum_{i,j=1}^{n}	x_i	a_{ij}z_j	+	\sum_{i,j=1}^{n}y_i	a_{ij}	z_j	=	B(x,z)	+	B(y,z)$
+	\item (ⅲ) $\displaystyle	B(\alpha	x	,	y)	=	\sum_{i,j=1}^{n}	\alpha	x_i	a_{ij}	y_j	=	\alpha	\sum_{i,j}^n	x_j	a_{ij}y_j	=	\alpha	B(x,y)$
+\end{list}
+
+\例{1.3}
+
+$S_2(a,b)	=	\{	f(t):	\: [a,b] \: \rightarrow \R \: | \: f(t)^2 \: \text{がRiemann 積分可能} \}$
+
+　
+\begin{align*}
+	0	&\leqq (f(t)	-	g(t))^2	=	f^2(t)	-2	f(t)g(t)	+	g^2(t)	\\
+&\Rightarrow	(f(t)	+	g(t))^2	=	f^2(t)	+	2	f(t)g(t)	+	g^2(t)	\leqq	2 f^2(t)	+	2	g^2(t)	\\
+&\Rightarrow	((f+g)(t))^2	=	(f(t)	+	g(t))^2	\leqq	2	(f^2(t)	+	g^2(t))	\\
+\end{align*}
+
+$S_2(a,b)$の元に対し，$Q(f) = \int_a^b f(t)^2 dt$とおいて$Q$を定めれば，これは$S_2(a,b)$上の
+2次形式となる．なぜならば
+\begin{list}{}{}
+	\item	(ⅳ) $\displaystyle	Q(af) = \int_a^b (af(t))^2 dt = a^2	\int_a^b f(t) dt	=	a^2 Q(f)$.
+	\item (ⅴ) 対称双1次形式となるべき$B(f)$は，
+		\begin{align*}
+			B(f,g)&= \frac{1}{2} (Q(f+g) - Q(f) -Q(g)) \\
+						&= \frac{1}{2} \left(	\int_a^b (f(t)+g(t))^2 dt
+																	-	\int_a^b f(t)^2 dt -	\int_a^b g(t)^2 dt
+														\right)	\\
+						&=\int_a^b f(t)g(t) dt
+		\end{align*}
+		(ⅰ) ～ (ⅲ)をみたす．
+\end{list}
+
+　
+
+ベクトル空間$V$上の2次形式$Q$が与えられたとき，$V$の任意の元$u$に対して，
+$Q(u) \geqq 0$が成り立つならば，$Q$を\textbf{正の半定符号形式}（positive semi-definite form）と呼び，
+もしもさらに，$Q(u) = 0 \Leftrightarrow u=0$（零ベクトル）が成り立つならば
+$Q$を\textbf{正の定符号形式}（positive definite form）と呼ぶ．
+
+p139,
+
+ここで，$u,v$を$V$の元，$\lambda$を任意の実数とするとき
+\begin{align*}
+	Q(\lambda + v)	&= Q(\lambda u) + Q(u) + 2B(\lambda u ,v)	\\
+									&=	\lambda^2	Q(u) + 2 \lambda B(u,v) + Q(u)	\geqq 0
+\end{align*}
+が成り立つから，前節と同様の考え方を踏襲して，$\lambda$についての2次式の判別式
+\begin{equation}
+	B(u,v)^2	\leqq	Q(u)Q(v)	\quad	(u,v	\in	V)
+\label{eq1x1}
+\end{equation}
+が成り立つことがわかる．また$Q$が正の定符号形式のときは，
+\[
+	Q(	\lambda	u	+	v)=0	\Leftrightarrow	\lambda	u	+	v=0
+\]
+となるから，(\ref{eq1x1})で等号が成り立つのは，$u,v$の一方が他方のスカラー倍となるとき，
+またそのときだけである．（$Q$が正の定符号形式のとき(\ref{eq1x1})を証明するには，
+次のようにしてもよい．$\lambda,\mu$を任意の実数とするとき，
+\[
+	Q(\lambda	u	+	\mu	v)	=	\lambda^2	Q(u)	+	2\lambda	\mu	B(u,v)	+	\mu^2	Q(v)	\geqq	0
+\]
+となる．ここで，$\lambda=Q(v),	\mu	=	-B(u,v)$とおくと，
+\begin{align*}
+	Q(v)^2Q(u)	+	2Q(v)B(u,v)^2	+	B(u,v)Q(v)	
+&=Q(v)	(Q(u)Q(v)	-	2B(u,v)^2	+	B(u,v)^2	\\
+&=Q(v)(Q(u)Q(v)	-	B(u,v)^2)	\\
+&\geqq	0
+\end{align*}
+が成り立つ．\[
+	Q(v)	=	0	\Leftrightarrow v=0
+\]
+だから，$Q(v)	=	0$ならば(\ref{eq1x1})は成り立ち，$Q(v) \ne 0$ならば$Q(v) > 0$だから，
+上式からやはり(\ref{eq1x1})が導かれる．）例1.1の場合のように，
+$B,Q$を定めると，(\ref{eq1x1})はつぎの\textbf{Cauchy-Schwarzの不等式}を意味する．
+\begin{equation}
+	\left(\sum_{i=1}^{n}	a_i	b_i	\right)^2
+	\leqq
+	\left(\sum_{i=1}^{n}	a_i^2	\right)
+	\left(\sum_{i=1}^{n}	b_i^2	\right)
+	\quad	(a_i	,	b_i	\geqq	0).
+\label{eq1x2}
+\end{equation}
+また，例1.3の$Q$に(\ref{eq1x1})を適用すれば，つぎの\textbf{Schwarzの不等式}が得られる．
+\begin{equation}
+	\left(	\int_a^b	f(x)g(x)	dx
+	\right)^2
+	\leqq
+	\int_a^b	f(x)^2	dx	\int_a^b	g(x)^2	dx	\quad	(f,g	\in	S_2(a,b)).
+\label{eq1x3}
+\end{equation}
+
+さて，$V$をベクトル空間，$Q$を$V$上の正の半定符号形式とし，$V$の元$u,v$に対して，
+$d_Q(u,v)=Q(u-v)^{1/2}$とおいて写像$d_Q : V \times V \rightarrow \R$を定義しよう．
+ここで，$x,y,z$を$V$の元，$u=x-y,v=y-z$と置くと，不等式(\ref{eq1x1})より
+\begin{align*}
+	(\ref{eq1x1})	
+&	\Rightarrow	B(u,v) \leqq	Q(u)^{1/2}Q(v)^{1/2}
+	\Rightarrow	2B(u,v) \leqq	2Q(u)^{1/2}Q(v)^{1/2}	\\
+&	\Rightarrow	Q(u+v) -Q(u) - Q(v)  \leqq	2Q(u)^{1/2}Q(v)^{1/2}	\\
+&	\Rightarrow	Q(u+v) \leqq Q(u) + Q(v) + 2Q(u)^{1/2}Q(v)^{1/2}
+\end{align*}
+が導かれ，したがって，
+\begin{align*}
+&\Rightarrow	d_Q(x,z)^2 \leqq d_Q(x,y)^2 + d_Q(y,z)^2 + 2d_Q(x,y)d_Q(y,z)	\\
+&\Rightarrow	d_Q(x,z)	\leqq	d_Q(x,y) + d_q(y,z)
+\end{align*}
+が成り立つ．このことから，$d_Q(x,y)$が$V$の元$x,y$の擬距離となることは明らかである
+(？保留）．
+特に$Q$が正の定符号形式ならば，$d_Q$は$V$で定義された距離関数となる．
+$d_Q$を‘2次形式$Q$によって定められる計量’と呼ぼう．
+

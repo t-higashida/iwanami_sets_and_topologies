@@ -1,0 +1,101 @@
+\part{位相}
+
+\chapter{距離空間}
+\section{距離空間}
+
+（保留）
+
+$X$を集合，$d$を直積$X \times X$から$\R$への写像で，つぎの（ⅰ）-（ⅲ）を満たすものとする．
+\begin{list}{}{}
+	\item（ⅰ）$X \times X$の任意の元$(x,y)$に対して$d(x,y) \geqq 0$．さらに命題
+\[
+	x = y \Leftrightarrow d(x,y) = 0 \quad (x,y \in X)	\quad\qquad \text{(M)}
+\]
+が成り立つ
+	\item（ⅱ）$d(x,y) = d(y,z) \quad (x,y \in X)$
+	\item（ⅲ）$d(x,z) \leqq d(x,y) + d(y,z) \quad ( x,y,z \in X)$．
+\end{list}
+このとき，順序対$(X,d)$を\textbf{距離空間}（metric space）と呼び，$X$に
+\textbf{距離}（distance）または\textbf{計量}（metric）$d$が与えられたという．
+$X$を距離空間$X,d)$の\textbf{台}（support）というが，$d$の与え方がわかっている場合，
+略式に単に$X$を距離空間ということもしばしばである．$d$は$X$で定義された
+\textbf{距離空間}ということもしばしばある．$d$は$X$で定義された\textbf{距離空間}
+（distance function）と呼ばれ，$X$の元は距離空間の\textbf{点}（point）と呼ばれる．
+$X$の点$x,y$に対して，$d(x,y)$を$x,y$の\textbf{距離}と呼ぶ．
+上の（ⅰ)，(ⅱ)，(ⅲ）が\textbf{距離空間の公理}である．
+特に（ⅲ）の式は\textbf{三角不等式}と呼ばれる．
+
+上の条件（ⅰ）において，命題(M)を，それよりも弱い命題
+\[
+	x = y \Rightarrow d(x,y) = 0 \quad (x,y \in X)	\quad\qquad \text{(P)}
+\]
+で置き換えたとき，$(X,d)$または$X$は\textbf{擬距離空間}（psedo-metric space）と呼ばれ，
+$d(x,y)$は点$x,y$の\textbf{擬距離}（psedo-distance）と呼ばれる．
+
+$X$として$\R$をとり，その元$x,y$に対して$d(x,y) = |x-y|$とおいて
+写像$d:X \times X \rightarrow \R$を定義すれば，$d$は明らかに条件
+（ⅰ），（ⅱ）を満たす．また，$\R$の元$x,y,z$に対して$x-z= = (x-y) + (y-z)$が
+成り立つから，$d$は三角不等式をも満たすのである．こうして，$(\R,d)$は距離空間となる
+ことがわかった．
+
+つぎに，$S$を任意の集合とするとき$X$として$S$から$\R$への‘有界’写像全体から
+なる集合を考えよう．$S$から$\R$への写像$f$が\textbf{有界}（bounded）であるとは，
+$S$のどのような元$x$に対しても$|f(x)| \leqq a$となるような実数$a$が存在することを
+意味する．ここで，$X$の元$f,g$に対して，$x$を$S$の中で動かしたときに
+$|f(x) - g(x)|$を考えれば，これは明らかに有界であるから上限を持つ．
+いま，$d(f,g)=\sup_{x\in S} | f(x) - g(x)|$とおけば，$(X,d)$は距離空間となる．
+
+\問題{1.1}
+上のことを確かめよ．――
+
+see. 『集合と位相』小林貞一著，\S 5.1.2 例3
+
+p137
+
+$d(x-y,z-y)	=	\sqrt{\{(x_1	-	y_1)	-	(z_1	-	y_1)\}^2	+	\{(x_2	-	y_2)	-	(z_2	-	y_2)\}^2}
+						=	\sqrt{\{(x_1	-	z_1)^2	+	(x_2	-	z_2)^2	\}}	=	d(x,z)$
+
+
+$d(x,z)=d(x-z,z-z)=d(x-z,(0,0))$
+
+　
+
+p137, 8行目
+「$(*)$で$x-y=u,y-z=v$とおけば，$(*)$と$(**)$は同値になる．」
+
+$\because$，$(*)$より$Q(u)^{1/2} + Q(v)^{1/2}	\geqq	Q^{1/2}(u+v)$．
+$Q(u),Q(v),Q(u+v) \geqq 0$であるから，両辺を２乗した式，
+\[
+	Q(u)	+	2Q(u)^{1/2}Q(v)^{1/2}	+Q(v)	\geqq	Q(u+v)
+\]
+と同値となる．
+
+　
+
+p137, 9行目
+
+ここで，$Q(u+v)	-	Q(u)-Q(v)	=2B(u,v)$とおこう．
+（$2B(u,v)=2Q^{1/2}(u)Q^{1/2}(v)$である．）
+$u=(u_1	,	u_2),	v=(v_1	,	v_2)$のとき，
+\begin{align*}
+	2B(u,v)	&=	(u_1+v_1)^2	+	(u_2	+	v_2)^2	-	u_1^2	-	u_2^2	-v_1^2	-	v_2^2	\\
+					&=	u_1^2	+	2u_1v_1	+	v_1^2	+	u_2^2	+	2u_2v_2	+	v_2^2	-	u_1^2	-	u_2^2	-	v_1^2	-	v_2^2	\\
+					&=	2u_1v_1	+	2u_2v_2
+\end{align*}
+であるから，$B(u,v)=u_1v_1	+	u_2v_2$となる．また，$Q(u)	=	B(u,u)$である．
+さて，任意の実数$\lambda$に対して，$Q(\lambda	u)=	\lambda^2	u_1^2	+	\lambda^2	u_2^2	=	\lambda^2	(u_1^2	+	u_2^2)=\lambda^2	Q(u)$,
+$B(\lambda	u	,	v)	=	\lambda	u_1v_1	+	\lambda	u_2	v_2	=	\lambda	B(u,v)$だから，
+\begin{align*}
+	Q(\lambda	u	+	v)	&=	(\lambda	u_1	+	v_1)^2	+	(\lambda	u_2	+	v_2)^2	\\
+										&=	\lambda^2	u_1^2	+	2	\lambda	u_1	v_1	+	v_1^2	+	\lambda^2	u_2^2	+	2	\lambda	u_2	v_2	+	v_2^2	\\
+										&=	\lambda^2	Q(u)	+	2	\lambda	B(u,v)	+	Q(v)	\quad	(u,v	\in	\R^2)	
+\end{align*}
+となる．さらに，$Q(\lambda	u	+	v)	\geqq	0$が$\lambda	(	\in	\R)$の選び方によらず成り立つから，
+上の$\lambda$についての2次式の判別式$B(u,v)^2	-	Q(u)Q(v)	\leqq	0$となる．
+（$Q(u)	\ne	0$のときに考えればよい）．
+\begin{align*}
+	B(u,v)	\leqq	Q(u)^{1/2}	Q(v)^{1/2}	\\
+	&\Rightarrow	2B(u,v)	\leqq	2Q(u)^{1/2}	Q(v)^{1/2}	\\
+	&\Rightarrow	Q(u+v)	-	Q(u)	-	Q(v)	\leqq	2Q(u)^{1/2}Q(v)^{1/2}	\\
+	&\Rightarrow	Q(u+v)	\leqq	Q(u)	+	2Q(u)^{1/2}Q(v)^{1/2}	+	Q(v)
+\end{align*}
